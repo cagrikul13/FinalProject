@@ -5,6 +5,7 @@
 
     <StackLayout >
         <Label Text="HELLO WORLD!" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Body" FontFamily="Calibri"></Label>
+        <Label Text="sljkdvnsldjvnskjd"></Label>
     </StackLayout>
 
 </ContentPage>
