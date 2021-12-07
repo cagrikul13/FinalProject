@@ -17,11 +17,11 @@ namespace FinalProject
         }
         private async void loginBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushModalAsync(new LoginPage());
         }
         private async void signUpBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SignUpPage());
+            await Navigation.PushModalAsync(new SignUpPage());
         }
     }
 }
