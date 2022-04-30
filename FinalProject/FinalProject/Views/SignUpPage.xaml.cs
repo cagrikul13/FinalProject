@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -13,20 +14,23 @@ namespace FinalProject.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
+        SignUpViewModel signUpVM;
         public SignUpPage()
         {
             InitializeComponent();
+            signUpVM = new SignUpViewModel();
+            BindingContext = signUpVM;
+
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            string hashedValue = Hashing(passwordEntry.Text);
-
+        async private void Button_Clicked(object sender, EventArgs e)
+        {            
+            await Navigation.PushModalAsync(new LoginPage());
         }
         private string Hashing(string password)
         {
             byte[] bytes = Encoding.Unicode.GetBytes(password);
-            byte[] inArray = HashAlgorithm.Create("SHA256").ComputeHash(bytes);
+            byte[] inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
             return Convert.ToBase64String(inArray);
         }
     }

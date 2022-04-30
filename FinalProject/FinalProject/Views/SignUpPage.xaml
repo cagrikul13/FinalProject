@@ -4,8 +4,30 @@
              x:Class="FinalProject.Views.SignUpPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name ="passwordEntry" Placeholder="Password" IsPassword="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Button Text="SIGN IN" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="DarkBlue" Clicked="Button_Clicked"/>
+            <Entry x:Name ="emailEntry" 
+                   Placeholder="Email" 
+                   Keyboard="Email"
+                   Text="{Binding Email}"
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name ="passwordEntry" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding Password}"/>
+            <Entry x:Name ="confPasswordEntry" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding confirmPassword}"/>
+            <Button Text="SIGN IN" 
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="DarkBlue" 
+                    Command="{Binding SignUpCommand}"/>
+            <Label x:Name="testLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

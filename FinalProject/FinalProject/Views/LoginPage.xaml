@@ -5,7 +5,12 @@
     <StackLayout>
         <Frame Padding="20" CornerRadius="10" HasShadow="True" Margin="3,6,3,0">
             <Entry Placeholder="Email Address" HorizontalOptions="Center" VerticalOptions="Center" />
+
         </Frame>
+        <Frame Padding="20" CornerRadius="10" HasShadow="True" Margin="3,6,3,0">
+            <Entry Placeholder="password" HorizontalOptions="Center" VerticalOptions="Center"/>    
+        </Frame>
+        
         
     </StackLayout>
 </ContentPage>

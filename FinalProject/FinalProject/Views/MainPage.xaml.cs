@@ -1,4 +1,5 @@
-﻿using FinalProject.Views;
+﻿using FinalProject.ViewModel;
+using FinalProject.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,12 @@ namespace FinalProject
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        MainPageViewModel mainPageVM;
+        public MainPage(string username)
         {
             InitializeComponent();
+            mainPageVM = new MainPageViewModel();
+            BindingContext = mainPageVM;
         }
         private async void loginBtn_Clicked(object sender, EventArgs e)
         {
