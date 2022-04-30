@@ -27,5 +27,13 @@ namespace FinalProject
         {
             await Navigation.PushModalAsync(new SignUpPage());
         }
+        private async void TestButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new QRCodePage());
+        }
+        private async void TestButton1_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new QRScannerPage());
+        }
     }
 }

@@ -20,6 +20,20 @@
                 CornerRadius="25" 
                 HorizontalOptions="Center" VerticalOptions="Center"
                 Clicked="signUpBtn_Clicked"/>
+        <Button Text="QR Test" 
+                TextColor="White" 
+                BackgroundColor="Black" 
+                WidthRequest="293" HeightRequest="43" 
+                CornerRadius="25" 
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="TestButton_Clicked"/>
+        <Button Text="QR Scanner Test" 
+                TextColor="White" 
+                BackgroundColor="Black" 
+                WidthRequest="293" HeightRequest="43" 
+                CornerRadius="25" 
+                HorizontalOptions="Center" VerticalOptions="Center"
+                Clicked="TestButton1_Clicked"/>
     </StackLayout>
 
 </ContentPage>
