@@ -4,13 +4,22 @@
              x:Class="FinalProject.Views.LoginPage">
     <StackLayout>
         <Frame Padding="20" CornerRadius="10" HasShadow="True" Margin="3,6,3,0">
-            <Entry Placeholder="Email Address" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Entry Placeholder="Email Address" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   Text="{Binding Username}"/>
 
         </Frame>
         <Frame Padding="20" CornerRadius="10" HasShadow="True" Margin="3,6,3,0">
-            <Entry Placeholder="password" HorizontalOptions="Center" VerticalOptions="Center"/>    
+            <Entry Placeholder="password" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   Text="{Binding Password}"/>    
         </Frame>
-        
-        
+        <Button Text="Login"
+                Command="{Binding LoginCommand}"
+                HorizontalOptions="FillAndExpand"/>
+
+
     </StackLayout>
 </ContentPage>

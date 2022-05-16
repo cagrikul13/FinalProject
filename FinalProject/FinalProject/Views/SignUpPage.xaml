@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinalProject.Views.SignUpPage">
+             x:Class="FinalProject.Views.SignUpPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name ="emailEntry" 
-                   Placeholder="Email" 
-                   Keyboard="Email"
-                   Text="{Binding Email}"
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"/>
-            <Entry x:Name ="passwordEntry" 
+            <Entry x:Name ="usernameEntry" 
+                   Placeholder="Username"
+                   Text="{Binding Username}"
+                   HorizontalOptions="FillAndExpand" 
+                   />
+            <Entry x:Name ="asswordEntry" 
                    Placeholder="Password" 
                    IsPassword="True" 
                    HorizontalOptions="CenterAndExpand" 
@@ -21,7 +21,7 @@
                    IsPassword="True" 
                    HorizontalOptions="CenterAndExpand" 
                    VerticalOptions="CenterAndExpand"
-                   Text="{Binding confirmPassword}"/>
+                   Text="{Binding ConfirmPassword}"/>
             <Button Text="SIGN IN" 
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand" 

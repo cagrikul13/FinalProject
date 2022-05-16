@@ -30,7 +30,7 @@ namespace FinalProject.ViewModel
             set
             {
                 password = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Password");
+                PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
 
@@ -73,10 +73,10 @@ namespace FinalProject.ViewModel
                     await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
                     //Navigate to Wellcom page after successfuly SignUp    
                     //pass user email to welcom page    
-                    await App.Current.MainPage.Navigation.PushAsync(new MainPage(Username));
+                    await Application.Current.MainPage.Navigation.PushAsync(new MainPage(Username));
                 }
                 else
-                    await App.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
 
             }
         }

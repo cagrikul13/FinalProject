@@ -19,6 +19,12 @@ namespace FinalProject
             mainPageVM = new MainPageViewModel();
             BindingContext = mainPageVM;
         }
+        public MainPage()
+        {
+            InitializeComponent();
+            mainPageVM = new MainPageViewModel();
+            BindingContext = mainPageVM;
+        }
         private async void loginBtn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new LoginPage());

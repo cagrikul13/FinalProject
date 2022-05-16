@@ -27,11 +27,5 @@ namespace FinalProject.Views
         {            
             await Navigation.PushModalAsync(new LoginPage());
         }
-        private string Hashing(string password)
-        {
-            byte[] bytes = Encoding.Unicode.GetBytes(password);
-            byte[] inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
-            return Convert.ToBase64String(inArray);
-        }
     }
 }

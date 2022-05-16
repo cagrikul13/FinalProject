@@ -37,7 +37,7 @@ namespace FinalProject.ViewModel
             }
         }
         //Read 
-        public static async Task<Users> GetUser(string Username)
+        public static async Task<Users> GetUser(string username)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace FinalProject.ViewModel
                 await firebase
                     .Child("Users")
                     .OnceAsync<Users>();
-                return allUsers.Where(a => a.username == Username).FirstOrDefault();
+                return allUsers.Where(a => a.username == username).FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -77,8 +77,8 @@ namespace FinalProject.ViewModel
             {
                 var toUpdateUser = (await firebase
                     .Child("Users")
-                    .OnceAsync<Users>()
-                    ).Where(a => a.Object.username == Username).FirstOrDefault();
+                    .OnceAsync<Users>())
+                    .Where(a => a.Object.username == Username).FirstOrDefault();
                 await firebase
                     .Child("Users")
                     .Child(toUpdateUser.Key)
