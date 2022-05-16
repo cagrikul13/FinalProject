@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace FinalProject.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentView
+    public partial class HomePage : ContentPage
     {
         public HomePage()
         {

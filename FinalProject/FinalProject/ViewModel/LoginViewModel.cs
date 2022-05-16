@@ -10,6 +10,7 @@ namespace FinalProject.ViewModel
     public class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
         public LoginViewModel()
         {
 
@@ -58,6 +59,7 @@ namespace FinalProject.ViewModel
                         await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
                         //Navigate to Wellcom page after successfuly login    
                         //pass user email to welcom page    
+                        
                         await App.Current.MainPage.Navigation.PushAsync(new HomePage());
                     }
                     else
