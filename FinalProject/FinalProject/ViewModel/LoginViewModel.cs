@@ -56,7 +56,7 @@ namespace FinalProject.ViewModel
                 if (user != null)
                     if (Username == user.username && Password == user.password)
                     {
-                        await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
+                        //await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
                         //Navigate to Wellcom page after successfuly login    
                         //pass user email to welcom page    
                         

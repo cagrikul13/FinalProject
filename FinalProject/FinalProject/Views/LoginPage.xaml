@@ -29,7 +29,7 @@
                    Text="{Binding Password}"/>    
         </Frame>
         <Button Text="Login"
-                Command="{Binding LoginCommand}"
+                Clicked="loginButtonClicked"
                 HorizontalOptions="FillAndExpand"/>
 
 
