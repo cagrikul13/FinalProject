@@ -2,35 +2,103 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.LoginPage"
-             BackgroundImageSource="loginBackground.png">
-    <StackLayout>
+             BackgroundImageSource="loginBackground.png"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Padding="20" Spacing="10">
+        <Image Source="actioTitle.png"
+               HorizontalOptions="Center"
+               WidthRequest="150"
+               Margin="0,30,0,0"/>
 
         <Label Text="Welcome!" 
                FontSize="25" 
                TextColor="Black" 
-               Margin="5,0,0,0"></Label>
+               Margin="40,50,0,0"
+               ></Label>
         <Label Text="Sign in to continue" 
                FontSize="20" 
                TextColor="Black" 
-               Margin="5,0,0,0"></Label>
-        
-        <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True" Margin="70,70,0,0">
-            <Entry Placeholder="Email Address" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   
-                   Text="{Binding Username}"/>
+               Margin="40,0,0,0"></Label>
+        <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Username" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                      Text="{Binding Username}"/>
+                <Frame BackgroundColor="Transparent" 
+                       HeightRequest="42" WidthRequest="42" 
+                       CornerRadius="25" Padding="0" Margin="5">
+                    <Image Source="envelope.png" 
+                           Aspect="AspectFill" 
+                           Margin="5"/>
+                </Frame>
 
+            </StackLayout>
         </Frame>
-        <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True" Margin="70,70,0,0">
-            <Entry Placeholder="password" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding Password}"/>    
+
+        <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Password" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       IsPassword="True"
+                       Text="{Binding Password}"/>
+                <Frame BackgroundColor="White" 
+                       HeightRequest="40" WidthRequest="40" 
+                       CornerRadius="30" Padding="0" Margin="5">
+                    <ImageButton Source="see.png" 
+                           Aspect="AspectFill" 
+                           Margin="0"/>
+                </Frame>
+
+
+            </StackLayout>
         </Frame>
-        <Button Text="Login"
-                Clicked="loginButtonClicked"
-                HorizontalOptions="FillAndExpand"/>
+        <Button 
+            BorderColor="Black"
+            BorderWidth="1"
+            TextColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Margin="20,30,20,0"
+            BackgroundColor="#4CE0B3"
+            CornerRadius="30"
+            Text="Login"
+            Command="{Binding LoginCommand}"
+            WidthRequest="300"
+            VerticalOptions="Fill"/>
+        <Label HorizontalOptions="End"
+               TextColor="#0AA0F3"
+               FontAttributes="Bold"
+               FontSize="15"
+               Text="Forgot Password?">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}">
+
+                </TapGestureRecognizer>
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label Text="or login with"
+               TextColor="#0AA0F3"
+               FontSize="15"
+               Margin="0,40,0,0"
+               HorizontalTextAlignment="Center"/>
 
 
     </StackLayout>
