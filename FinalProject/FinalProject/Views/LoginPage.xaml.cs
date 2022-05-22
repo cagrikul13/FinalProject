@@ -23,6 +23,7 @@ namespace FinalProject.Views
             BindingContext = loginViewModel;
         }
         
+        // Forgot Password Navigationu Eklenecek
         
 
 

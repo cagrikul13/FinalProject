@@ -41,5 +41,6 @@ namespace FinalProject
         {
             await Navigation.PushModalAsync(new QRScannerPage());
         }
+
     }
 }

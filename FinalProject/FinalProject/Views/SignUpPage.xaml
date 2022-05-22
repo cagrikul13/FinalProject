@@ -2,33 +2,93 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.SignUpPage"
-             NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="signUpBackground.png">
     <ContentPage.Content>
         <StackLayout>
+
+            <Label Text="Signup"
+                   HorizontalTextAlignment="Center"
+               FontSize="25" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
+            <Label Text="Let's get you started!"
+                   HorizontalTextAlignment="Center"
+               FontSize="20" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
+            
+            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
             <Entry x:Name ="usernameEntry" 
-                   Placeholder="Username"
+                   Placeholder="Email Address"
                    Text="{Binding Username}"
                    HorizontalOptions="FillAndExpand" 
                    />
+            </Frame>
+            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
             <Entry x:Name ="asswordEntry" 
                    Placeholder="Password" 
                    IsPassword="True" 
                    HorizontalOptions="CenterAndExpand" 
                    VerticalOptions="CenterAndExpand"
                    Text="{Binding Password}"/>
-            <Entry x:Name ="confPasswordEntry" 
-                   Placeholder="Password" 
+            </Frame>
+            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
+                <Entry x:Name ="nameEntry" 
+                   Placeholder="Name" 
                    IsPassword="True" 
                    HorizontalOptions="CenterAndExpand" 
                    VerticalOptions="CenterAndExpand"
                    Text="{Binding ConfirmPassword}"/>
-            <Button Text="SIGN IN" 
+            </Frame>
+            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
+                <Entry x:Name ="dobEntry" 
+                   Placeholder="Date of Birth" 
+                   IsPassword="True" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding ConfirmPassword}"/>
+            </Frame>
+            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
+                <Entry x:Name ="phoneEntry" 
+                   Placeholder="Phone Number" 
+                   IsPassword="True" 
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding ConfirmPassword}"/>
+            </Frame>
+            <Button Text="Signup" 
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand" 
-                    BackgroundColor="DarkBlue" 
+                    BackgroundColor="DarkOrange" 
                     Command="{Binding SignUpCommand}"/>
             <Label x:Name="testLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="You can sign up with" 
+                   HorizontalTextAlignment="Center"
+                   FontSize="15" 
+                   TextColor="Black" 
+                   Margin="5,0,0,0"></Label>
+            <StackLayout Orientation="Horizontal">
+               <!--Buttonlar image button olacak, source'ları eklenecek-->
+                <Button Text="Signup" 
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="DarkOrange" 
+                    Command="{Binding SignUpCommand}"/>
+                <Button Text="Signup" 
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="DarkOrange" 
+                    Command="{Binding SignUpCommand}"/>
+                <Button Text="Signup" 
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="DarkOrange" 
+                    Command="{Binding SignUpCommand}"/>
+            </StackLayout>
+            <Label Text="By signing up, you are agree with our Terms and Conditions"
+                FontSize="15" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
