@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.MainPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="mainBackground.png">
 
-    <StackLayout>
-        <Label Text="Want to socialize?" TextColor="#685F64" FontFamily="Segoe UI" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,320,0,0"/>
+    <StackLayout Padding="0" >
+        <Image Source="myLogo.png" WidthRequest="300"></Image>
+        
+        <Label Text="Want to socialize?" TextColor="#685F64" Margin="0,50,0,0" FontFamily="Segoe UI" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
         <Label Text="You're in the right app!" TextColor="#685F64" FontFamily="Segoe UI" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
         <Button Text="Login" TextColor="White" 
                 Margin="0,60,0,0" 

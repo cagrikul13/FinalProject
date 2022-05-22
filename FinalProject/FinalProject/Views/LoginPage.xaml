@@ -1,19 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinalProject.Views.LoginPage">
+             x:Class="FinalProject.Views.LoginPage"
+             BackgroundImageSource="loginBackground.png">
     <StackLayout>
-        <Frame Padding="20" CornerRadius="10" HasShadow="True" Margin="3,6,3,0">
+
+        <Label Text="Welcome!" 
+               FontSize="25" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
+        <Label Text="Sign in to continue" 
+               FontSize="20" 
+               TextColor="Black" 
+               Margin="5,0,0,0"></Label>
+        
+        <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True" Margin="70,70,0,0">
             <Entry Placeholder="Email Address" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Center"
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
+                   
                    Text="{Binding Username}"/>
 
         </Frame>
-        <Frame Padding="20" CornerRadius="10" HasShadow="True" Margin="3,6,3,0">
+        <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True" Margin="70,70,0,0">
             <Entry Placeholder="password" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Center"
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand"
                    Text="{Binding Password}"/>    
         </Frame>
         <Button Text="Login"
