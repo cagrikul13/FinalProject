@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +13,7 @@ namespace FinalProject
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ProfilePage());
         }
 
         protected override void OnStart()
