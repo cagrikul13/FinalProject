@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.QRCodePage"
              BackgroundImageSource="mainBackground.png"
-             xmlns:zxcm="clr-namespace:ZXingçCommon;assembly=zxing.portable"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" xmlns:zxcm1="clr-namespace:ZXing.Common;assembly=zxing.portable">
 
     <StackLayout>

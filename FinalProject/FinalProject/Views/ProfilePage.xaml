@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.ProfilePage"
+             BackgroundImageSource="mainBackground.png">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" HasShadow="True" WidthRequest="100" HeightRequest="100" Padding="-10" >
+                <Image Source="cagriPhoto.png" WidthRequest="250" HeightRequest="250" ></Image>
+            </Frame>
+            <Label Text="Çağrı" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
+            <Label Text="24" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
+            <Label Text="Eskişehir" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" WidthRequest="200">
+                <Grid RowSpacing="0" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" ></RowDefinition>
+                        <RowDefinition Height="50" ></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Çağrı" HorizontalOptions="Start" FontSize="20" Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Text="Çağrı" HorizontalOptions="End" FontSize="20" Grid.Column="1" Grid.Row="0"></Label>
+                    <Frame BackgroundColor="White" 
+                           BorderColor="Black" 
+                           Padding="0" 
+                           HorizontalOptions="Start"
+                           CornerRadius="30"
+                           WidthRequest="300"
+                           Margin="0,0,0,0"
+                           Grid.Column="0"
+                           Grid.Row="1">
+                    </Frame>
+                    <Frame BackgroundColor="White" 
+                           BorderColor="Black" 
+                           Padding="0" 
+                           HorizontalOptions="Start"
+                           CornerRadius="30"
+                           WidthRequest="300"
+                           Margin="0,0,0,0"
+                           Grid.Column="1"
+                           Grid.Row="1">
+                    </Frame>
+                </Grid>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label Text="Recent Activities" HorizontalOptions="Center"></Label>
+            <ScrollView VerticalOptions="CenterAndExpand">
+                <Frame BackgroundColor="White" 
+                           BorderColor="Black"
+                           Padding="0" 
+                           HorizontalOptions="Start"
+                           CornerRadius="30"
+                           WidthRequest="300"
+                           Margin="0,0,0,0">
+                </Frame>
+            </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
