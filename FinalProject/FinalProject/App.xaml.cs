@@ -10,10 +10,10 @@ namespace FinalProject
     {
         
         public App()
-        {
+        {   
             InitializeComponent();
+            MainPage = new NavigationPage(new HomePage());
 
-            MainPage = new NavigationPage(new ProfilePage());
         }
 
         protected override void OnStart()

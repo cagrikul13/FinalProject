@@ -32,7 +32,7 @@
                        FontAttributes="None" 
                        HorizontalOptions="FillAndExpand" 
                        Margin="20,0,20,0"
-                      Text="{Binding Username}"/>
+                       Text="{Binding Username}"/>
                 <Frame BackgroundColor="Transparent" 
                        HeightRequest="42" WidthRequest="42" 
                        CornerRadius="25" Padding="0" Margin="5">

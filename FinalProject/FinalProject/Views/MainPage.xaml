@@ -16,28 +16,14 @@
                 CornerRadius="25" 
                 BackgroundColor="#4CE0B3" 
                 HorizontalOptions="Center" VerticalOptions="Center"
-                Clicked="loginBtn_Clicked"/>
+                Command="{Binding Login}"/>
         <Button Text="Sign Up" 
                 TextColor="White" 
                 BackgroundColor="#FFAF87" 
                 WidthRequest="293" HeightRequest="43" 
                 CornerRadius="25" 
                 HorizontalOptions="Center" VerticalOptions="Center"
-                Clicked="signUpBtn_Clicked"/>
-        <Button Text="QR Test" 
-                TextColor="White" 
-                BackgroundColor="Black" 
-                WidthRequest="293" HeightRequest="43" 
-                CornerRadius="25" 
-                HorizontalOptions="Center" VerticalOptions="Center"
-                Clicked="TestButton_Clicked"/>
-        <Button Text="QR Scanner Test" 
-                TextColor="White" 
-                BackgroundColor="Black" 
-                WidthRequest="293" HeightRequest="43" 
-                CornerRadius="25" 
-                HorizontalOptions="Center" VerticalOptions="Center"
-                Clicked="TestButton1_Clicked"/>
+                Command="{Binding SignUp}"/>
     </StackLayout>
 
 </ContentPage>

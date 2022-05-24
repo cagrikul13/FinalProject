@@ -23,6 +23,7 @@ namespace FinalProject.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Rg.Plugins.Popup.Popup.Init();
             ZXing.Net.Mobile.Forms.iOS.Platform.Init();
             LoadApplication(new App());
 
