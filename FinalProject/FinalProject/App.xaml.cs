@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,10 +10,10 @@ namespace FinalProject
     {
         
         public App()
-        {
+        {   
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            
+            MainPage = new NavigationPage(new HomePage());
         }
 
         protected override void OnStart()

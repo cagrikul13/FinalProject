@@ -22,14 +22,5 @@ namespace FinalProject.Views
             InitializeComponent();
             BindingContext = loginViewModel;
         }
-        private async void loginButtonClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new HomePage());
-        }
-
-        // Forgot Password Navigationu Eklenecek
-
-
-
     }
 }

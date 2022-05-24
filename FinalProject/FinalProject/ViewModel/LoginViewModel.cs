@@ -1,9 +1,12 @@
-﻿using FinalProject.Views;
+﻿using FinalProject.CustomControls;
+using FinalProject.Views;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace FinalProject.ViewModel
 {
@@ -56,10 +59,7 @@ namespace FinalProject.ViewModel
                 if (user != null)
                     if (Username == user.username && Password == user.password)
                     {
-                        //await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
-                        //Navigate to Wellcom page after successfuly login    
-                        //pass user email to welcom page    
-                        
+                        await App.Current.MainPage.Navigation.PushModalAsync(new CustomDialog("header","content"));                     
                         await App.Current.MainPage.Navigation.PushAsync(new HomePage());
                     }
                     else
@@ -67,6 +67,18 @@ namespace FinalProject.ViewModel
                 else
                     await App.Current.MainPage.DisplayAlert("Login Fail", "User not found", "OK");
             }
+        }
+
+        public Command ForgotPasswordCommand
+        {
+            get
+            {
+                return new Command(ForgotPassword);
+            }
+        }
+        private async void ForgotPassword()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new ForgotPasswordPage());
         }
     }
 }

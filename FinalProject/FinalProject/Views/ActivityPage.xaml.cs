@@ -10,11 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace FinalProject.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ForgotPassword : ContentView
+    public partial class ActivityPage : ContentPage
     {
-        public ForgotPassword()
+        public ActivityPage(string activityTime,string activityLocation, string activityCategory)
         {
             InitializeComponent();
+            activity_Time.Text = activityTime;
+            //activity_Location.Text = activityLocation;
+            //activity_Category.Text = activityCategory;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,14 @@ using Xamarin.Forms.Xaml;
 
 namespace FinalProject.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
+        HomePageViewModel homePageVM; 
         public HomePage()
         {
             InitializeComponent();
+            homePageVM = new HomePageViewModel();
+            BindingContext = homePageVM;
         }
     }
 }

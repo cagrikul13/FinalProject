@@ -3,73 +3,89 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.HomePage"
              NavigationPage.HasNavigationBar="True"
-             BackgroundImageSource="HomePageBackground.png"
-             >
-    <ContentPage.Content>
-        <StackLayout>
-            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True" Margin="70,70,0,0">
-                <Entry Placeholder="Search" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding Username}"/>
-            </Frame>
-            <Label Text="Let's find you an activity!" 
-               FontSize="25" 
-               TextColor="Black" 
-               Margin="5,0,0,0">
-            </Label>
-            <Label Text="Categories" 
-               FontSize="25" 
-               TextColor="Black" 
-               Margin="5,0,0,0">
-            </Label>
-            <ScrollView Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Sports" 
-                            TextColor="White" 
-                            BackgroundColor="#FFAF87" 
-                            WidthRequest="293" HeightRequest="43" 
-                            CornerRadius="25">
-                    </Button>
-                    <Button Text="Games" 
-                            TextColor="White" 
-                            BackgroundColor="#FFAF87" 
-                            WidthRequest="293" HeightRequest="43" 
-                            CornerRadius="25">
-                    </Button>
-                    <Button Text="Art" 
-                            TextColor="White" 
-                            BackgroundColor="#FFAF87" 
-                            WidthRequest="293" HeightRequest="43" 
-                            CornerRadius="25">
-                    </Button>
-                    <Button Text="Activity" 
-                            TextColor="White" 
-                            BackgroundColor="#FFAF87" 
-                            WidthRequest="293" HeightRequest="43" 
-                            CornerRadius="25">
-                    </Button>
-                    <Button Text="Sikiş" 
-                            TextColor="White" 
-                            BackgroundColor="#FFAF87" 
-                            WidthRequest="293" HeightRequest="43" 
-                            CornerRadius="25">
-                    </Button>
-                </StackLayout>
-            </ScrollView>
-            <StackLayout Orientation="Horizontal">
-            <Label Text="Events" 
-               FontSize="25" 
-               TextColor="Black" 
-               Margin="5,0,0,0">
-            </Label>
-                <Picker Title="Sort By">
-                    <Picker.Items>
-                        <x:String>Relevance</x:String>
-                        <x:String>Date</x:String>
-                    </Picker.Items>
-                </Picker>
+             BackgroundImageSource="HomePageBackground.png">
+    
+        <StackLayout Spacing="20" Padding="20">
+            <StackLayout> <!-- Searchbar and label layout -->
+                <Frame Padding="0" CornerRadius="20">
+                    <SearchBar Placeholder="Search for an activity"
+                           TextTransform="Lowercase"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"
+                           FontAttributes="Italic">
+                    </SearchBar>
+                </Frame>
+                <Label Text="Let's find you an activity!" 
+                   FontSize="20" 
+                   TextColor="Black" 
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold,Italic">
+                </Label>
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+            <StackLayout> <!--Categories and Scrollable button layout -->
+                <Label Text="Categories" 
+                   FontSize="20" 
+                   TextColor="Black" 
+                   >
+                </Label>
+                <ScrollView Orientation="Horizontal" 
+                        HorizontalScrollBarVisibility="Never">
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Sports" 
+                            TextColor="White" 
+                            BackgroundColor="#FFAF87" 
+                            WidthRequest="293" HeightRequest="43" 
+                            CornerRadius="25">
+                        </Button>
+                        <Button Text="Games" 
+                            TextColor="White" 
+                            BackgroundColor="#FFAF87" 
+                            WidthRequest="293" HeightRequest="43" 
+                            CornerRadius="25">
+                        </Button>
+                        <Button Text="Art" 
+                            TextColor="White" 
+                            BackgroundColor="#FFAF87" 
+                            WidthRequest="293" HeightRequest="43" 
+                            CornerRadius="25">
+                        </Button>
+                        <Button Text="Activity" 
+                            TextColor="White" 
+                            BackgroundColor="#FFAF87" 
+                            WidthRequest="293" HeightRequest="43" 
+                            CornerRadius="25">
+                        </Button>
+                        <Button Text="Sikiş" 
+                            TextColor="White" 
+                            BackgroundColor="#FFAF87" 
+                            WidthRequest="293" HeightRequest="43" 
+                            CornerRadius="25">
+                        </Button>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            
+            
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.22*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Events" 
+                           FontSize="25" 
+                           TextColor="Black" 
+                           Grid.Column="0">
+                    </Label>
+                    
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+                
+            </StackLayout>
+
+
+    </StackLayout>
+    
+    
 </ContentPage>
