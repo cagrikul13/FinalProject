@@ -10,17 +10,18 @@ using Xamarin.Forms.Xaml;
 namespace FinalProject.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public ProfilePage()
+        public SettingsPage()
         {
             InitializeComponent();
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             var navigationPage = Application.Current.MainPage as NavigationPage;
-            navigationPage.BarBackgroundColor = Color.OrangeRed;
+            navigationPage.BarBackgroundColor = Color.MediumPurple;
         }
     }
 }
