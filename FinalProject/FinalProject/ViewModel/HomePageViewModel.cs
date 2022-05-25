@@ -10,20 +10,32 @@ using Xamarin.Forms;
 
 namespace FinalProject.ViewModel
 {
-    class HomePageViewModel 
+    class HomePageViewModel : INotifyPropertyChanged
     {
-        public List<Activities> ActivityList { get; set; } 
 
-        public List<ObservableCollection<Activities>> GroupedData { get; set; }
+
+        private ObservableCollection<Activities> activitiesList;
+
+        public ObservableCollection<Activities> ActivitiesList
+        {
+            get { return activitiesList; }
+            set { activitiesList = value; }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public HomePageViewModel()
         {
-            var repo = new ActivityRepo();
-            ActivityList = repo.GetActivities.OrderBy(p => p.activityLocation).ToList();
-            GroupedData = ActivityList
-                .GroupBy(p=>p.activityCategory.ToString())
-                .Select(p => new ObservableCollection<Activities>(p))
-                .ToList();
+            ActivitiesList = new ObservableCollection<Activities>() 
+            {
+                new Activities()
+                {
+                    activityPicture = "basketballCategory.png",
+                    activityTime = "15 Kasım Saat 13-15",
+                    activityLocation = "Çarşı A Spor Salonu",
+                    activityCategory = "Basketball"
+                }
+            };
         }
 
         /*private string username;

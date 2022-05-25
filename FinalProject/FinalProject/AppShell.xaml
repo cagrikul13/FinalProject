@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:views="clr-namespace:FinalProject.Views" 
+       mc:Ignorable="d"
+       x:Class="FinalProject.AppShell">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ThemeColor">Orange</Color>
+            <Color x:Key="BackgroundColor">#ef77b1</Color>
+            <Color x:Key="NavigationPrimary">#FFFFFF</Color>
+            
+        </ResourceDictionary>
+    </Shell.Resources>
+    <FlyoutItem Title="Home">
+        <Tab Title="Search" Icon="loupe.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" />
+        </Tab>
+        <Tab Title="Discover" Icon="location.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ForgotPasswordPage}" />
+        </Tab>
+        <Tab Title="Blog" Icon="inbox.png">
+            <ShellContent ContentTemplate="{DataTemplate views:QRScannerPage}" />
+        </Tab>
+        
+    </FlyoutItem>
+</Shell>

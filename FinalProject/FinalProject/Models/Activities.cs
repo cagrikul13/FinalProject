@@ -6,6 +6,7 @@ namespace FinalProject.Models
 {
     public class Activities
     {
+        public string activityPicture { get; set; }
         public string activityTime { get; set; }
         public string activityLocation { get; set; }
         public string activityCategory { get; set; }
