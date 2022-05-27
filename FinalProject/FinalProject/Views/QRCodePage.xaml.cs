@@ -16,5 +16,11 @@ namespace FinalProject.Views
         {
             InitializeComponent();
         }
+
+        private async void scannerClicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new QRScannerPage());
+
+        }
     }
 }

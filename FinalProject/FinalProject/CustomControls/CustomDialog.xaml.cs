@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace FinalProject.CustomControls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CustomDialog : PopupPage
+    public partial class CustomDialog 
     {
         public CustomDialog(string header,string content)
         {

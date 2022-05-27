@@ -59,7 +59,7 @@ namespace FinalProject.ViewModel
                 if (user != null)
                     if (Username == user.username && Password == user.password)
                     {
-                        await App.Current.MainPage.Navigation.PushModalAsync(new CustomDialog("header","content"));                     
+                        await App.Current.MainPage.DisplayAlert("Successfull Login", "", "OK");                     
                         await App.Current.MainPage.Navigation.PushAsync(new HomePage());
                     }
                     else
