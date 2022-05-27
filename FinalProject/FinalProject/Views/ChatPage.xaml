@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.ChatPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" ItemsSource="{Binding .}" x:Name="chatListView"
+				SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell>
+                        
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry Placeholder="Start typing..." Grid.Column="0" x:Name="messageToSent"/>
+        <Button Text="Send!" Grid.Column="1" Clicked="sendButtonClicked"/>
+    </Grid>
+    
+</ContentPage>
