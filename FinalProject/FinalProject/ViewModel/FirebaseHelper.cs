@@ -112,33 +112,6 @@ namespace FinalProject.ViewModel
 
             }
         }
-
-        public static async Task<List<Activities>> GetActivities()
-        {
-            var activityList = (await firebase
-                .Child("Activities")
-                .OnceAsync<Activities>()).Select(item => new Activities
-                {
-                    activityCategory = item.Object.activityCategory,
-                    activityParticipiantCount = item.Object.activityParticipiantCount,
-                    activityDate = item.Object.activityDate,
-                    activityTime = item.Object.activityTime
-                }).ToList();
-            return activityList;
-        }
-
-        public static async Task<bool> AddActivity(string activity_Category, string activityParticipiant_Count, string activity_Date, string activity_Time)
-        {
-
-            await firebase.Child("Activities").PostAsync(new Activities()
-            {
-                activityParticipiantCount = activityParticipiant_Count,
-                activityCategory = activity_Category,
-                activityDate = activity_Date,
-                activityTime = activity_Time
-            });
-            return true;
-        }
     
     }
 }

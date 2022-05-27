@@ -9,7 +9,6 @@
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
                 <Setter Property="Shell.BackgroundColor" Value="#4E80B4" />
-                <Setter Property="Shell.Title" Value="x"/>
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
@@ -39,10 +38,10 @@
 
     <TabBar>
         <ShellContent 
-                      Title="Profile"
+            Title="Profile"
                       Icon="myLogo.png"
-                      Route="ProfilePage"
-                      ContentTemplate="{DataTemplate local:ProfilePage}">
+                      Route="ForgotPasswordPage"
+                      ContentTemplate="{DataTemplate local:ForgotPasswordPage}">
         </ShellContent>
         <ShellContent Title="Home"
                       Icon="myLogo.png"
@@ -51,8 +50,8 @@
         </ShellContent>
         <ShellContent Title="Chat"
                       Icon="myLogo.png"
-                      Route="ActivityCreationPage"
-                      ContentTemplate="{DataTemplate local:ActivityCreationPage}">
+                      Route="TestPage"
+                      ContentTemplate="{DataTemplate local:ChatPage}">
         </ShellContent>
     </TabBar>
 

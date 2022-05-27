@@ -26,8 +26,8 @@ namespace FinalProject.ViewModel
 
         public HomePageViewModel()
         {
-            ActivitiesList = new ObservableCollection<Activities>();
-            /*{
+            ActivitiesList = new ObservableCollection<Activities>() 
+            {
                 new Activities()
                 {
                     activityPicture = "basketballCategory.png",
@@ -42,22 +42,7 @@ namespace FinalProject.ViewModel
                     activityLocation = "Gym",
                     activityCategory = "Table Tennis"
                 }
-            };*/
-        }
-        public Command CreateActvity
-        {
-            get
-            {
-                return new Command(CreateActivityCommand);
-            }
-        }
-
-        private async void CreateActivityCommand()
-        {
-            ActivitiesList.Add(new Activities 
-            {
-
-            });
+            };
         }
 
         /*private string username;

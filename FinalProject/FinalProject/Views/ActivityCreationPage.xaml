@@ -4,7 +4,6 @@
              x:Class="FinalProject.Views.ActivityCreationPage"
              BackgroundImageSource="HomePageBackground.png"
              NavigationPage.HasNavigationBar="true">
-    
     <NavigationPage.TitleView>
         <Label TextColor="White" HorizontalOptions="Center" FontFamily="SegoeBold" FontSize="20">Create an Activity</Label>
     </NavigationPage.TitleView>
@@ -16,8 +15,7 @@
                     Title="Select a Category"
                     TitleColor="MediumPurple"
                     FontFamily="SegoePlain"
-                    x:Name="SelectCategory"
-                    BindingContext="{Binding ActivityCategory}">
+                    x:Name="SelectCategory">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Indoor Sports</x:String>
@@ -33,8 +31,7 @@
                     Title="Participant Amount"
                     TitleColor="MediumPurple"
                     FontFamily="SegoePlain"
-                    x:Name="ParticipantAmount"
-                     BindingContext="{Binding ActivityParticipantAmount}"       >
+                    x:Name="ParticipantAmount">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:Int16}">
                         <x:Int16>1</x:Int16>
@@ -56,20 +53,18 @@
                             FontFamily="SegoePlain"
                             MinimumDate="05/26/2022"
                             HorizontalOptions="EndAndExpand"
-                            x:Name="SelectDate"
-                            BindingContext="{Binding ActivityDate}">
+                            x:Name="SelectDate">
                 </DatePicker>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="20">
                 <Label FontFamily="SegoeBold" Margin="0,11,0,0" FontSize="25">Select Time:</Label>
                 <TimePicker HorizontalOptions="CenterAndExpand"
                             FontFamily="SegoePlain"
-                            x:Name="SelectTime"
-                            BindingContext="{Binding ActivityTime}">
+                            x:Name="SelectTime">
                 </TimePicker>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50" Margin="0,20,0,0">
-                <Button Text="Create Activity" FontFamily="SegoeBold" CornerRadius="30" FontSize="14" WidthRequest="140" BackgroundColor="#4CE0B3" Command="{Binding AddActivityCommand}"></Button>
+                <Button Text="Create Activity" FontFamily="SegoeBold" CornerRadius="30" FontSize="14" WidthRequest="140" BackgroundColor="#4CE0B3" Clicked="CreateActivity_Clicked"></Button>
                 <Button Text="Clear All" FontFamily="SegoeBold" CornerRadius="30" WidthRequest="140" BackgroundColor="#4CE0B3" Clicked="ClearAll_Clicked"></Button>
             </StackLayout>
 

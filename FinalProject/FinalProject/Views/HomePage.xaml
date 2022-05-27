@@ -133,10 +133,6 @@
                                                        FontFamily="SegoePlain"
                                                        TextColor="#FFAF87"
                                                        FontSize="20"/>
-                                                    <Label Text="{Binding activityDate}"
-                                                       FontFamily="SegoePlain"
-                                                       TextColor="#FFAF87"
-                                                       FontSize="20"/>
                                                     <Label Text="{Binding activityCategory}"
                                                        FontFamily="SegoePlain"
                                                        TextColor="#FFAF87"
@@ -169,8 +165,7 @@
                VerticalOptions="End"
                HorizontalOptions="End">
             <ImageButton Source="add.png" 
-                     BackgroundColor="#FFAF87"
-                         Clicked="ActivityCreation_Clicked"/>
+                     BackgroundColor="#FFAF87"/>
         </Frame>
         
     </Grid>

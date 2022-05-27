@@ -16,9 +16,9 @@ namespace FinalProject
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
-            Routing.RegisterRoute(nameof(ActivityCreationPage), typeof(ActivityCreationPage));
+            Routing.RegisterRoute(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
+            Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
         }
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
