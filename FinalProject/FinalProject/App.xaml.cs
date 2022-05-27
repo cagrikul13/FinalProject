@@ -15,8 +15,8 @@ namespace FinalProject
 
            
 
-            MainPage = new NavigationPage(new ActivityCreationPage());
-
+            MainPage = new NavigationPage(new HomePage());
+            MainPage = new AppShell();
 
         }
 
