@@ -12,7 +12,8 @@
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" HasShadow="True" WidthRequest="100" HeightRequest="100" Padding="-10" >
-                <Image Source="cagriPhoto.png" WidthRequest="250" HeightRequest="250" ></Image>
+                <Image Source="cagriPhoto.png" WidthRequest="250" HeightRequest="250" >
+                </Image>
             </Frame>
             <Label Text="Çağrı" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
             <Label Text="24" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
@@ -35,9 +36,13 @@
                            HorizontalOptions="Start"
                            CornerRadius="30"
                            WidthRequest="300"
-                           Margin="0,0,60,0"
+                           Margin="10,0,60,0"
                            Grid.Column="0"
-                           Grid.Row="1">
+                           Grid.Row="1"
+                           >
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="12">
+                            Average Rating: 5★
+                        </Label>
                     </Frame>
                     <Frame BackgroundColor="White" 
                            BorderColor="Black" 
@@ -45,9 +50,12 @@
                            HorizontalOptions="Start"
                            CornerRadius="30"
                            WidthRequest="300"
-                           Margin="0,0,60,0"
+                           Margin="0,0,80,0"
                            Grid.Column="1"
                            Grid.Row="1">
+                        <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="12">
+                            Favorite Activity: Sikiş
+                        </Label>
                     </Frame>
                 </Grid>
             </StackLayout>

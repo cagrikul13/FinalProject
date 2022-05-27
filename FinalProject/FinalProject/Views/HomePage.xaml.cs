@@ -19,5 +19,10 @@ namespace FinalProject.Views
             homePageVM = new HomePageViewModel();
             BindingContext = homePageVM;
         }
+
+        private async void ActivityCreation_Clicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new ActivityCreationPage());
+        }
     }
 }
