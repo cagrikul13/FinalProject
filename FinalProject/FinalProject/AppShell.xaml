@@ -1,29 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       xmlns:views="clr-namespace:FinalProject.Views" 
-       mc:Ignorable="d"
-       x:Class="FinalProject.AppShell">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.AppShell"
+       xmlns:tabbar="clr-namespace:ExtendedShellTabBar.VisualElements;assembly=ExtendedShellTabBar"
+       xmlns:local="clr-namespace:FinalProject.Views">
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="ThemeColor">Orange</Color>
-            <Color x:Key="BackgroundColor">#ef77b1</Color>
-            <Color x:Key="NavigationPrimary">#FFFFFF</Color>
-            
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
+                <Setter Property="Shell.BackgroundColor" Value="#4E80B4" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#4E80B4" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#4E80B4" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Shell.Resources>
-    <FlyoutItem Title="Home">
-        <Tab Title="Search" Icon="loupe.png">
-            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" />
-        </Tab>
-        <Tab Title="Discover" Icon="location.png">
-            <ShellContent ContentTemplate="{DataTemplate views:ForgotPasswordPage}" />
-        </Tab>
-        <Tab Title="Blog" Icon="inbox.png">
-            <ShellContent ContentTemplate="{DataTemplate views:QRScannerPage}" />
-        </Tab>
-        
-    </FlyoutItem>
+
+    <TabBar>
+        <ShellContent 
+            Title="Profile"
+                      Icon="myLogo.png"
+                      Route="ForgotPasswordPage"
+                      ContentTemplate="{DataTemplate local:ForgotPasswordPage}">
+        </ShellContent>
+        <ShellContent Title="Home"
+                      Icon="myLogo.png"
+                      Route="HomePage"
+                      ContentTemplate="{DataTemplate local:HomePage}">
+        </ShellContent>
+        <ShellContent Title="Chat"
+                      Icon="myLogo.png"
+                      Route="TestPage"
+                      ContentTemplate="{DataTemplate local:ChatPage}">
+        </ShellContent>
+    </TabBar>
+
 </Shell>
