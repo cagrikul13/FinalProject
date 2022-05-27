@@ -3,6 +3,7 @@ using Firebase.Database;
 using Firebase.Database.Query;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -112,6 +113,42 @@ namespace FinalProject.ViewModel
 
             }
         }
-    
+
+        public async Task<List<Room>> getRoomList()
+        {
+            return (await firebase
+                .Child("ChatApp")
+                .OnceAsync<Room>())
+                .Select((item) =>
+                new Room
+                {
+                    Key = item.Key,
+                    roomName = item.Object.roomName
+                }
+
+                       ).ToList();
+        }
+
+        public async Task saveRoom(Room rm)
+        {
+            await firebase.Child("ChatApp")
+                    .PostAsync(rm);
+
+        }
+
+        public async Task saveMessage(Chat _ch, string _room)
+        {
+            await firebase.Child("ChatApp/" + _room + "/Message")
+                    .PostAsync(_ch);
+        }
+        public ObservableCollection<Chat> subChat(string _roomKEY)
+        {
+
+            return firebase.Child("ChatApp/" + _roomKEY + "/Message")
+                           .AsObservable<Chat>()
+                           .AsObservableCollection<Chat>();
+        }
+
+
     }
 }
