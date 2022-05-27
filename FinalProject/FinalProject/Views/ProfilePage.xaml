@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.ProfilePage"
-             BackgroundImageSource="mainBackground.png">
+             BackgroundImageSource="mainBackground.png"
+             NavigationPage.HasNavigationBar="true"
+             NavigationPage.HasBackButton="True">
+    <NavigationPage.TitleView>
+        <Label TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20">Profile</Label>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" HasShadow="True" WidthRequest="100" HeightRequest="100" Padding="-10" >
@@ -11,25 +17,25 @@
             <Label Text="Çağrı" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
             <Label Text="24" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
             <Label Text="Eskişehir" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" WidthRequest="200">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="100" WidthRequest="300">
                 <Grid RowSpacing="0" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" ></RowDefinition>
                         <RowDefinition Height="50" ></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
-                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="200" ></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Çağrı" HorizontalOptions="Start" FontSize="20" Grid.Column="0" Grid.Row="0"></Label>
-                    <Label Text="Çağrı" HorizontalOptions="End" FontSize="20" Grid.Column="1" Grid.Row="0"></Label>
+                    <Label Text="Çağrı" HorizontalOptions="Start" Margin="45,0,0,0" FontSize="20" Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Text="Çağrı" HorizontalOptions="End" Margin="0,0,120,0" FontSize="20" Grid.Column="1" Grid.Row="0"></Label>
                     <Frame BackgroundColor="White" 
                            BorderColor="Black" 
                            Padding="0" 
                            HorizontalOptions="Start"
                            CornerRadius="30"
                            WidthRequest="300"
-                           Margin="0,0,0,0"
+                           Margin="0,0,60,0"
                            Grid.Column="0"
                            Grid.Row="1">
                     </Frame>
@@ -39,7 +45,7 @@
                            HorizontalOptions="Start"
                            CornerRadius="30"
                            WidthRequest="300"
-                           Margin="0,0,0,0"
+                           Margin="0,0,60,0"
                            Grid.Column="1"
                            Grid.Row="1">
                     </Frame>
@@ -47,18 +53,26 @@
             </StackLayout>
             
             <StackLayout>
-                <Label Text="Recent Activities" HorizontalOptions="Center"></Label>
-            <ScrollView VerticalOptions="CenterAndExpand">
-                <Frame BackgroundColor="White" 
-                           BorderColor="Black"
-                           Padding="0" 
-                           HorizontalOptions="Start"
-                           CornerRadius="30"
-                           WidthRequest="300"
-                           Margin="0,0,0,0">
-                </Frame>
-            </ScrollView>
+                <Label Text="Recent Activities" FontSize="20" HorizontalOptions="Center"></Label>
+                
+                <!-- ListView olarak güncellenip data alabilir hale getirilecek <-->
+                <ScrollView>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                        <Label>fdsdsgfdsgfdgfds</Label>
+                    </StackLayout>
+                </ScrollView>
             </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
