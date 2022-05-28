@@ -48,10 +48,10 @@ namespace FinalProject.Views
 
         private async void roomAddBtnClicked(object sender, EventArgs e)
         {
+            string rName = await DisplayPromptAsync("Create New Room", "Enter room name");
             await firebase.saveRoom(new Room() 
             {
-                roomName = "",
-                
+                roomName = rName
             });
             
         }

@@ -8,17 +8,33 @@
         </Grid.RowDefinitions>
         <StackLayout Grid.Row="0">
             <ListView ItemsSource="{Binding .}" x:Name="myListView"
-                  RowHeight="120"
+                  RowHeight="70"
                   IsPullToRefreshEnabled="True"
                   ItemSelected="myListView_ItemSelected"
-                  Refreshing="myListView_Refreshing">
+                  Refreshing="myListView_Refreshing"
+                      SeparatorColor="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout BackgroundColor="Blue">
-                                <Label Text="{Binding username}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.ColumnSpan="3"
+                                       Padding="0"
+                                       CornerRadius="20"
+                                       BackgroundColor="Beige">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="myLogo.png"/>
+                                        <Label Text="{Binding roomName}"
+                                               FontSize="10"
+                                               FontFamily="SegoeBold"/>
+                                    </StackLayout>
+                                </Frame>
+                                
 
-                            </StackLayout>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -26,12 +42,19 @@
 
             </ListView>
         </StackLayout>
-        <Button Grid.Row="0"
-                WidthRequest="50"
-                HeightRequest="50"
-                VerticalOptions="End"
-                HorizontalOptions="Center"
-                Clicked="roomAddBtnClicked"/>
+        <Frame Grid.Row="0"
+               VerticalOptions="End"
+               HorizontalOptions="Center"
+               Padding="0"
+               CornerRadius="20"
+               BackgroundColor="#4CE0B3"
+               Margin="0,0,0,10">
+            <Button 
+                Clicked="roomAddBtnClicked"
+                Text="Create New Room"
+                BackgroundColor="Transparent"/>
+        </Frame>
+        
     </Grid>
     
 </ContentPage>

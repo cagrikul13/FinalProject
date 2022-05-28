@@ -1,4 +1,5 @@
 ﻿using FinalProject.Models;
+using FinalProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,23 +27,20 @@ namespace FinalProject.ViewModel
 
         public HomePageViewModel()
         {
-            ActivitiesList = new ObservableCollection<Activities>() 
+            
+        }
+
+        public Command AddActivityButton
+        {
+            get
             {
-                new Activities()
-                {
-                    activityPicture = "basketballCategory.png",
-                    activityTime = "15 Kasım Saat 13-15",
-                    activityLocation = "Çarşı A Spor Salonu",
-                    activityCategory = "Basketball"
-                },
-                new Activities()
-                {
-                    activityPicture = "basketballCategory.png",
-                    activityTime = "21 June 2 pm",
-                    activityLocation = "Gym",
-                    activityCategory = "Table Tennis"
-                }
-            };
+                return new Command(AddActivityBtn);
+            }
+        }
+
+        private async void AddActivityBtn()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new ActivityCreationPage());
         }
 
         /*private string username;

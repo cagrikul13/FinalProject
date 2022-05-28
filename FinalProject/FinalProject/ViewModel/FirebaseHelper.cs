@@ -149,6 +149,41 @@ namespace FinalProject.ViewModel
                            .AsObservableCollection<Chat>();
         }
 
+        public static async Task<bool> AddActivity(string ActivityCategory, string ActivityDate, string ActivityTime, string ActivityCategoryParticipiantCount)
+        {
+            try
+            {
+                await firebase.Child("Activities").PostAsync(new Activities()
+                {
+                    activityCategory = ActivityCategory,
+                    activityDate = ActivityDate,
+                    activityTime = ActivityTime,
+                    activityParticipiantCount = ActivityCategoryParticipiantCount 
+                });
+                
+                return true;
+            } catch(Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return false;
+            }
+        }
+
+        public async Task<List<Activities>> GetActivities()
+        {
+            return (await firebase
+                .Child("Activities")
+                .OnceAsync<Activities>())
+                .Select((item) => 
+                new Activities 
+                {
+                    activityCategory = item.Object.activityCategory,
+                    activityDate = item.Object.activityDate,
+                    activityTime = item.Object.activityTime,
+                    activityParticipiantCount = item.Object.activityParticipiantCount
+
+                }).ToList();
+        } 
 
     }
 }

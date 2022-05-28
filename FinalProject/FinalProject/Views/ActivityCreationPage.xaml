@@ -15,7 +15,8 @@
                     Title="Select a Category"
                     TitleColor="MediumPurple"
                     FontFamily="SegoePlain"
-                    x:Name="SelectCategory">
+                    x:Name="SelectCategory"
+                    SelectedItem="{Binding ActivityCategory}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Indoor Sports</x:String>
@@ -31,7 +32,8 @@
                     Title="Participant Amount"
                     TitleColor="MediumPurple"
                     FontFamily="SegoePlain"
-                    x:Name="ParticipantAmount">
+                    x:Name="ParticipantAmount"
+                            SelectedIndex="{Binding ActivityParticipiantCount}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:Int16}">
                         <x:Int16>1</x:Int16>
@@ -49,22 +51,24 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="20">
                 <Label FontFamily="SegoeBold" Margin="0,11,0,0" FontSize="25">Select Date:</Label>
-                <DatePicker Format="D"
-                            FontFamily="SegoePlain"
-                            MinimumDate="05/26/2022"
-                            HorizontalOptions="EndAndExpand"
-                            x:Name="SelectDate">
-                </DatePicker>
+                
+                <Entry FontFamily="SegoePlain"
+                       HorizontalOptions="CenterAndExpand"
+                       x:Name="SelectDate"
+                       Placeholder="Saturday, May 28 "
+                       Text="{Binding ActivityDate}"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="20">
                 <Label FontFamily="SegoeBold" Margin="0,11,0,0" FontSize="25">Select Time:</Label>
-                <TimePicker HorizontalOptions="CenterAndExpand"
-                            FontFamily="SegoePlain"
-                            x:Name="SelectTime">
-                </TimePicker>
+                <Entry HorizontalOptions="CenterAndExpand"
+                       FontFamily="SegoePlain"
+                       x:Name="SelectTime"
+                       Placeholder="18.00"
+                       Text="{Binding ActivityTime}">
+                </Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50" Margin="0,20,0,0">
-                <Button Text="Create Activity" FontFamily="SegoeBold" CornerRadius="30" FontSize="14" WidthRequest="140" BackgroundColor="#4CE0B3" Clicked="CreateActivity_Clicked"></Button>
+                <Button Text="Create Activity" FontFamily="SegoeBold" CornerRadius="30" FontSize="14" WidthRequest="140" BackgroundColor="#4CE0B3" Command="{Binding AddActivityCommand}"></Button>
                 <Button Text="Clear All" FontFamily="SegoeBold" CornerRadius="30" WidthRequest="140" BackgroundColor="#4CE0B3" Clicked="ClearAll_Clicked"></Button>
             </StackLayout>
 
