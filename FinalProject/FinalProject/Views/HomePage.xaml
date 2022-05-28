@@ -95,7 +95,8 @@
 
             <StackLayout>
                 <!--Activity swiping controls -->
-                <CarouselView ItemsSource="{Binding ActivitiesList}">
+                <CarouselView ItemsSource="{Binding ActivitiesList}"
+                              x:Name="myActivityList">
                     <CarouselView.ItemsLayout>
                         <LinearItemsLayout
                         Orientation="Horizontal"
@@ -165,7 +166,8 @@
                VerticalOptions="End"
                HorizontalOptions="End">
             <ImageButton Source="add.png" 
-                     BackgroundColor="#FFAF87"/>
+                         BackgroundColor="#FFAF87"
+                         Command="{Binding AddActivityButton}"/>
         </Frame>
         
     </Grid>

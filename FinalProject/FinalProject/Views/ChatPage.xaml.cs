@@ -39,6 +39,7 @@ namespace FinalProject.Views
                 username = user.name
             };
             await fbClient.saveMessage(chatObject, room.Key);
+            messageToSent.Text = String.Empty;
         }
     }
 }

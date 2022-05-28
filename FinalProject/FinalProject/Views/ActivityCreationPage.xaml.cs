@@ -14,16 +14,12 @@ namespace FinalProject.Views
     public partial class ActivityCreationPage : ContentPage
         
     {
+        ActivityViewModel activityViewModel;
         public ActivityCreationPage()
         {
             InitializeComponent();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            var navigationPage = Application.Current.MainPage as NavigationPage;
-            navigationPage.BarBackgroundColor = Color.MediumPurple;
+            activityViewModel = new ActivityViewModel();
+            BindingContext = activityViewModel;
         }
 
         private void ClearAll_Clicked(object sender, EventArgs e)
@@ -31,18 +27,10 @@ namespace FinalProject.Views
             var today = DateTime.Now;
             SelectCategory.SelectedIndex = -1;
             ParticipantAmount.SelectedIndex = -1;
-            SelectDate.Date = DateTime.Now;
-            SelectTime.Time = DateTime.Now.TimeOfDay;
+            SelectDate.Text = DateTime.Now.ToString();
+            SelectTime.Text = DateTime.Now.TimeOfDay.ToString();
         }
 
-        private void CreateActivity_Clicked(object sender, EventArgs e)
-        {
-            HomePageViewModel homePageViewModel = new HomePageViewModel();
-            homePageViewModel.ActivitiesList.Add(
-                new Models.Activities()
-                {
-                    
-                });
-        }
+        
     }
 }
