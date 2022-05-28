@@ -28,6 +28,10 @@ namespace FinalProject.Views
             myActivityList.BindingContext = activityList;
         }
 
-
+        
+        async private void Settings_Clicked(object sender, EventArgs e)
+        {
+                await Navigation.PushModalAsync(new SettingsPage());
+        }
     }
 }

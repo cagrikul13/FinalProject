@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.ActivityCreationPage"
              BackgroundImageSource="HomePageBackground.png"
-             NavigationPage.HasNavigationBar="true">
+             NavigationPage.HasNavigationBar="true"
+             NavigationPage.HasBackButton="True">
     <NavigationPage.TitleView>
         <Label TextColor="White" HorizontalOptions="Center" FontFamily="SegoeBold" FontSize="20">Create an Activity</Label>
     </NavigationPage.TitleView>

@@ -16,12 +16,5 @@ namespace FinalProject.Views
         {
             InitializeComponent();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            var navigationPage = Application.Current.MainPage as NavigationPage;
-            navigationPage.BarBackgroundColor = Color.MediumPurple;
-        }
     }
 }

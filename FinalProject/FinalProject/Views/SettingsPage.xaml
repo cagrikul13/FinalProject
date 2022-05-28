@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <StackLayout Spacing="10" Padding="15" Margin="0,5,0,0">
             <StackLayout Orientation="Horizontal">
-                <Label Text="Push notifications" FontFamily=""></Label>
+                <Label Text="Push notifications" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
@@ -21,7 +21,7 @@
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
             <StackLayout Orientation="Horizontal" Margin="0,7,0,0">
-                <Label Text="Push notifications"></Label>
+                <Label Text="Dark Mode (Beta)" FontFamily="SegoeBold"></Label>
                 <Switch  IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
@@ -29,7 +29,7 @@
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
             <StackLayout Orientation="Horizontal" Margin="0,7,0,0">
-                <Label Text="Push notifications"></Label>
+                <Label Text="Show average rating" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
@@ -37,7 +37,7 @@
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
             <StackLayout Orientation="Horizontal" Margin="0,7,0,0">
-                <Label Text="Push notifications"></Label>
+                <Label Text="Show favorite activity" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
@@ -45,7 +45,7 @@
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
             <StackLayout Orientation="Horizontal" Margin="0,7,0,0">
-                <Label Text="Push notifications"></Label>
+                <Label Text="Join chat page automatically" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
@@ -53,7 +53,7 @@
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
             <StackLayout Orientation="Horizontal" Margin="0,7,0,0">
-                <Label Text="Push notifications"></Label>
+                <Label Text="Continue event after timer expires" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
@@ -61,14 +61,14 @@
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
             <StackLayout Orientation="Horizontal" Margin="0,7,0,0">
-                <Label Text="Push notifications"></Label>
+                <Label Text="Update automatically" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
             <BoxView 
                    HeightRequest="1"
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
-            <Image Source="myLogo.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="200" ></Image>
+            <Image Source="myLogo.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="250" ></Image>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

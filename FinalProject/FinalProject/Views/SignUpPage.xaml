@@ -16,45 +16,104 @@
                FontSize="20" 
                TextColor="Black" 
                Margin="5,0,0,0"></Label>
-            
-            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
-            <Entry x:Name ="usernameEntry" 
-                   Placeholder="Email Address"
-                   Text="{Binding Username}"
-                   HorizontalOptions="FillAndExpand" 
-                   />
+
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Username" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+                    <Frame BackgroundColor="Transparent" 
+                       HeightRequest="42" WidthRequest="42" 
+                       CornerRadius="25" Padding="0" Margin="5">
+                        
+                    </Frame>
+
+                </StackLayout>
             </Frame>
-            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
-            <Entry x:Name ="asswordEntry" 
-                   Placeholder="Password" 
-                   IsPassword="True" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding Password}"/>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Username" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+
+                </StackLayout>
             </Frame>
-            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
-                <Entry x:Name ="nameEntry" 
-                   Placeholder="Name" 
-                   IsPassword="True" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding ConfirmPassword}"/>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Username" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+
+                </StackLayout>
             </Frame>
-            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
-                <Entry x:Name ="dobEntry" 
-                   Placeholder="Date of Birth" 
-                   IsPassword="True" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding ConfirmPassword}"/>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Username" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+                    <Frame BackgroundColor="Transparent" 
+                       HeightRequest="42" WidthRequest="42" 
+                       CornerRadius="25" Padding="0" Margin="5">
+                    </Frame>
+
+                </StackLayout>
             </Frame>
-            <Frame CornerRadius="30" VerticalOptions="Fill" HasShadow="True">
-                <Entry x:Name ="phoneEntry" 
-                   Placeholder="Phone Number" 
-                   IsPassword="True" 
-                   HorizontalOptions="CenterAndExpand" 
-                   VerticalOptions="CenterAndExpand"
-                   Text="{Binding ConfirmPassword}"/>
+            <Frame BackgroundColor="White" 
+               BorderColor="Black" 
+               Padding="0" 
+               HorizontalOptions="CenterAndExpand"
+               CornerRadius="30"
+               WidthRequest="300"
+               Margin="0,30,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Placeholder="Username" 
+                       TextColor="Black" 
+                       FontAttributes="None" 
+                       HorizontalOptions="FillAndExpand" 
+                       Margin="20,0,20,0"
+                       Text="{Binding Username}"/>
+                    <Frame BackgroundColor="Transparent" 
+                       HeightRequest="42" WidthRequest="42" 
+                       CornerRadius="25" Padding="0" Margin="5">
+                    </Frame>
+
+                </StackLayout>
             </Frame>
             <Button Text="Signup" 
                     HorizontalOptions="CenterAndExpand"

@@ -74,7 +74,7 @@ namespace FinalProject.ViewModel
                     await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
                     //Navigate to Wellcom page after successfuly SignUp    
                     //pass user email to welcom page    
-                    await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+                    Application.Current.MainPage = new AppShell();
                 }
                 else
                     await Application.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
