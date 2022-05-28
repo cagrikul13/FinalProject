@@ -8,9 +8,10 @@
     <StackLayout Padding="0" >
         <Image Source="myLogo.png" WidthRequest="300"></Image>
         
-        <Label Text="Want to socialize?" TextColor="#685F64" Margin="0,50,0,0" FontFamily="Segoe UI" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-        <Label Text="You're in the right app!" TextColor="#685F64" FontFamily="Segoe UI" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-        <Button Text="Login" TextColor="White" 
+        <Label Text="Want to socialize?" TextColor="#685F64" Margin="0,50,0,0" FontFamily="SegoeBold" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Label Text="You're in the right app!" TextColor="#685F64" FontFamily="SegoePlain" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+        <Button Text="Login" TextColor="White"
+                FontFamily="SegoeBold"
                 Margin="0,60,0,0" 
                 WidthRequest="293" HeightRequest="43" 
                 CornerRadius="25" 
@@ -18,6 +19,7 @@
                 HorizontalOptions="Center" VerticalOptions="Center"
                 Command="{Binding Login}"/>
         <Button Text="Sign Up" 
+                FontFamily="SegoeBold"
                 TextColor="White" 
                 BackgroundColor="#FFAF87" 
                 WidthRequest="293" HeightRequest="43" 

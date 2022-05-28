@@ -11,11 +11,13 @@
                Margin="0,30,0,0"/>
 
         <Label Text="Welcome!" 
+               FontFamily="SegoeBold"
                FontSize="25" 
                TextColor="Black" 
                Margin="40,50,0,0"
                ></Label>
         <Label Text="Sign in to continue" 
+               FontFamily="SegoePlain"
                FontSize="20" 
                TextColor="Black" 
                Margin="40,0,0,0"></Label>
@@ -27,7 +29,8 @@
                WidthRequest="300"
                Margin="0,30,0,0">
             <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="Username" 
+                <Entry Placeholder="Username"
+                       FontFamily="SegoePlain"
                        TextColor="Black" 
                        FontAttributes="None" 
                        HorizontalOptions="FillAndExpand" 
@@ -50,9 +53,10 @@
                HorizontalOptions="CenterAndExpand"
                CornerRadius="30"
                WidthRequest="300"
-               Margin="0,30,0,0">
+               Margin="0,20,0,0">
             <StackLayout Orientation="Horizontal">
                 <Entry Placeholder="Password" 
+                       FontFamily="SegoePlain"
                        TextColor="Black" 
                        FontAttributes="None" 
                        HorizontalOptions="FillAndExpand" 
@@ -62,12 +66,11 @@
                 <Frame BackgroundColor="White" 
                        HeightRequest="40" WidthRequest="40" 
                        CornerRadius="30" Padding="0" Margin="5">
-                    <ImageButton Source="see.png" 
+                    <ImageButton Source="see.png"
+                                 BackgroundColor="Transparent"
                            Aspect="AspectFill" 
                            Margin="0"/>
                 </Frame>
-
-
             </StackLayout>
         </Frame>
         <Button 
@@ -75,16 +78,17 @@
             BorderWidth="1"
             TextColor="White"
             HorizontalOptions="CenterAndExpand"
-            Margin="20,30,20,0"
+            Margin="20,30,20,10"
             BackgroundColor="#4CE0B3"
             CornerRadius="30"
             Text="Login"
+            FontFamily="SegoeBold"
             Command="{Binding LoginCommand}"
             WidthRequest="300"
             VerticalOptions="Fill"/>
         <Label HorizontalOptions="End"
                TextColor="#0AA0F3"
-               FontAttributes="Bold"
+               FontFamily="SegoeBold"
                FontSize="15"
                Text="Forgot Password?">
             <Label.GestureRecognizers>
@@ -95,11 +99,30 @@
         </Label>
 
         <Label Text="or login with"
+               FontFamily="SegoePlain"
                TextColor="#0AA0F3"
                FontSize="15"
-               Margin="0,40,0,0"
+               Margin="0,30,0,10"
                HorizontalTextAlignment="Center"/>
-
-
+        <StackLayout Orientation="Horizontal">
+            <ImageButton Source="google.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+            <ImageButton Source="facebook.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+            <ImageButton Source="twitter.png" 
+                             HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand" 
+                    BackgroundColor="Transparent" 
+                    Command="{Binding SignUpCommand}"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
