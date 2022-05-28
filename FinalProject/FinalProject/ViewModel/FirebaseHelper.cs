@@ -15,7 +15,7 @@ namespace FinalProject.ViewModel
     {
         public static FirebaseClient firebase = new FirebaseClient("https://actio-5ec97-default-rtdb.firebaseio.com/");
     
-        //Read all
+        //User Operations
         public static async Task<List<Users>> GetAllUsers()
         {
             try
@@ -37,7 +37,7 @@ namespace FinalProject.ViewModel
                 return null;
             }
         }
-        //Read 
+        
         public static async Task<Users> GetUser(string username)
         {
             try
@@ -54,7 +54,7 @@ namespace FinalProject.ViewModel
                 return null;
             }
         }
-        //Insert a user
+        
         public static async Task<bool> AddUser(string Username, string Password)
         {
             try
@@ -71,7 +71,7 @@ namespace FinalProject.ViewModel
                 return false;
             }
         }
-        //Update
+        
         public static async Task<bool> UpdateUser(string Username,string Password)
         {
             try
@@ -92,8 +92,7 @@ namespace FinalProject.ViewModel
                 return false;
             }
         }
-
-        //Delete User
+                
         public static async Task<bool> DeleteUser(string Username)
         {
             try
@@ -114,6 +113,7 @@ namespace FinalProject.ViewModel
             }
         }
 
+        //Chat Operations
         public async Task<List<Room>> getRoomList()
         {
             return (await firebase
@@ -141,6 +141,7 @@ namespace FinalProject.ViewModel
             await firebase.Child("ChatApp/" + _room + "/Message")
                     .PostAsync(_ch);
         }
+
         public ObservableCollection<Chat> subChat(string _roomKEY)
         {
 
@@ -149,6 +150,7 @@ namespace FinalProject.ViewModel
                            .AsObservableCollection<Chat>();
         }
 
+        //Activity Operations
         public static async Task<bool> AddActivity(string ActivityCategory, string ActivityDate, string ActivityTime, string ActivityCategoryParticipiantCount)
         {
             try

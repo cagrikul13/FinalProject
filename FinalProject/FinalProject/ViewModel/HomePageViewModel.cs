@@ -1,5 +1,4 @@
 ﻿using FinalProject.Models;
-using FinalProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,19 +27,6 @@ namespace FinalProject.ViewModel
         public HomePageViewModel()
         {
             
-        }
-
-        public Command AddActivityButton
-        {
-            get
-            {
-                return new Command(AddActivityBtn);
-            }
-        }
-
-        private async void AddActivityBtn()
-        {
-            await Application.Current.MainPage.Navigation.PushAsync(new ActivityCreationPage());
         }
 
         /*private string username;
