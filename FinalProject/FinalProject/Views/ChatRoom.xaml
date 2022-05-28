@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.ChatRoom">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="qrcode.png"
+                     Clicked="QR_Clicked"/>
+    </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackLayout Grid.Row="0">
+        <StackLayout Grid.Row="0" Spacing="20">
             <ListView ItemsSource="{Binding .}" x:Name="myListView"
                   RowHeight="70"
                   IsPullToRefreshEnabled="True"
@@ -21,17 +25,16 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
-                                <Frame Grid.ColumnSpan="3"
-                                       Padding="0"
-                                       CornerRadius="20"
-                                       BackgroundColor="Beige">
-                                    <StackLayout Orientation="Horizontal">
-                                        <Image Source="myLogo.png"/>
-                                        <Label Text="{Binding roomName}"
-                                               FontSize="10"
+                                
+                                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3">
+                                    <Image Source="myLogo.png"/>
+                                    <Label Text="{Binding roomName}"
+                                               FontSize="25"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="Center"
                                                FontFamily="SegoeBold"/>
-                                    </StackLayout>
-                                </Frame>
+                                 </StackLayout>
+                                
                                 
 
                             </Grid>

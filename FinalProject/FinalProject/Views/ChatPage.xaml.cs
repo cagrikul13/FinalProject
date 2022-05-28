@@ -33,6 +33,7 @@ namespace FinalProject.Views
 
         private async void sendButtonClicked(object sender, EventArgs e)
         {
+            
             var chatObject = new Chat
             {
                 userMessage = messageToSent.Text,

@@ -2,6 +2,8 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Firebase.Database;
+using Firebase.Database.Query;
 
 
 namespace FinalProject
@@ -23,6 +25,7 @@ namespace FinalProject
 
         protected override void OnStart()
         {
+            
         }
 
         protected override void OnSleep()

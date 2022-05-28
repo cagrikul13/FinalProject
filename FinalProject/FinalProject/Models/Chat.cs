@@ -6,6 +6,7 @@ namespace FinalProject.Models
 {
     public class Chat
     {
+        
         public string username { get; set; }
 
         public string userMessage { get; set; }
