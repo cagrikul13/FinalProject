@@ -17,6 +17,7 @@
             </zxing:ZXingBarcodeImageView.BarcodeOptions>
             
         </zxing:ZXingBarcodeImageView>
+        <Label/>
         <Button Text="Open Scanner" TextColor="White" 
                 Margin="0,60,0,0" 
                 WidthRequest="293" HeightRequest="43" 
