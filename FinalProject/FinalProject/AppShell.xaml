@@ -15,8 +15,7 @@
                 <Setter Property="Shell.TabBarBackgroundColor" Value="#4E80B4" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
-                
+                <Setter Property="Shell.TabBarTitleColor" Value="Black"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
@@ -36,7 +35,7 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <TabBar>
+    <TabBar x:Name="shellItems">
         <ShellContent 
             Title="Profile"
                       Icon="myLogo.png"
@@ -44,6 +43,7 @@
                       ContentTemplate="{DataTemplate local:ForgotPasswordPage}">
         </ShellContent>
         <ShellContent Title="Home"
+                      x:Name="shellHomePage"
                       Icon="myLogo.png"
                       Route="HomePage"
                       ContentTemplate="{DataTemplate local:HomePage}">

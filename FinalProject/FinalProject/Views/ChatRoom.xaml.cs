@@ -55,5 +55,10 @@ namespace FinalProject.Views
             });
             
         }
+
+        private async void QR_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new QRCodePage());
+        }
     }
 }

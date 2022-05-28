@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.ChatPage">
+    
+
     <Grid RowSpacing="10" ColumnSpacing="50">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
@@ -11,12 +13,15 @@
 				SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding username}" 
-                              TextColor="Blue"
-                              Detail="{Binding userMessage}" 
-                              DetailColor="Black">
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding userMessage}"/>
+                        </StackLayout>
                         
-                    </TextCell>
+                    </ViewCell>
+                    
+
+                   
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
@@ -35,6 +40,7 @@
             </Frame>
 
             <Button Text="Send!" BackgroundColor="#4CE0B3" CornerRadius="20" VerticalOptions="Center" Grid.Column="1" Clicked="sendButtonClicked"/>
+            <Button/>
         </Grid>
         
     </Grid>
