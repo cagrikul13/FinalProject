@@ -14,11 +14,9 @@ namespace FinalProject
         public App()
         {   
             InitializeComponent();
+            var splashPage = new NavigationPage(new SplashPage());
+            MainPage = splashPage;
 
-           
-
-            MainPage = new NavigationPage(new HomePage());
-            MainPage = new AppShell();
 
 
         }
