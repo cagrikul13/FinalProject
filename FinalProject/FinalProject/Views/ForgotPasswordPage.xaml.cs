@@ -16,5 +16,17 @@ namespace FinalProject.Views
         {
             InitializeComponent();
         }
+
+        private async void SignupClicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new SignUpPage());
+
+        }
+
+        private async void LoginClicked(object sender, EventArgs e)
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new LoginPage());
+
+        }
     }
 }

@@ -55,13 +55,17 @@ namespace FinalProject.ViewModel
             }
         }
         
-        public static async Task<bool> AddUser(string Username, string Password)
+        public static async Task<bool> AddUser(string Username, string Password, string Name, string DateOfBirth, string PhoneNumber)
         {
             try
             {
                 await firebase.Child("Users").PostAsync(new Users()
                 {
-                    username = Username, password = Password
+                    username = Username, 
+                    password = Password,
+                    name = Name,
+                    DOB = DateOfBirth, 
+                    phone_number = PhoneNumber, 
                 });
                 return true;
             }

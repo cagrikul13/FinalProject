@@ -48,32 +48,28 @@
                                 BackgroundColor="#FFAF87" 
                                 WidthRequest="293" HeightRequest="43" 
                                 CornerRadius="25"
-                                FontFamily="SegoePlain">
+                                FontFamily="SegoeBold">
                         </Button>
                         <Button Text="Games" 
                                 TextColor="White" 
-                                BackgroundColor="#FFAF87" 
+                                BackgroundColor="#4e80b4" 
                                 WidthRequest="293" HeightRequest="43" 
                                 CornerRadius="25"
-                                FontFamily="SegoePlain">
+                                FontFamily="SegoeBold">
                         </Button>
                         <Button Text="Art" 
                                 TextColor="White" 
-                                BackgroundColor="#FFAF87" 
+                                BackgroundColor="#4CE0B3" 
                                 WidthRequest="293" HeightRequest="43" 
-                                CornerRadius="25">
+                                CornerRadius="25"
+                                FontFamily="SegoeBold">
                         </Button>
                         <Button Text="Activity" 
                                 TextColor="White" 
                                 BackgroundColor="#FFAF87" 
                                 WidthRequest="293" HeightRequest="43" 
-                                CornerRadius="25">
-                        </Button>
-                        <Button Text="Sikiş" 
-                            TextColor="White" 
-                            BackgroundColor="#FFAF87" 
-                            WidthRequest="293" HeightRequest="43" 
-                            CornerRadius="25">
+                                CornerRadius="25"
+                                FontFamily="SegoeBold">
                         </Button>
                     </StackLayout>
                 </ScrollView>
@@ -86,13 +82,6 @@
                    TextColor="Black" 
                    FontFamily="SegoePlain"
                    HorizontalOptions="Start"/>
-
-                <Label Text="Events" 
-                   FontSize="25" 
-                   TextColor="Black" 
-                   Grid.Column="0"
-                   FontFamily="SegoePlain"
-                   HorizontalOptions="EndAndExpand"/>
 
             </StackLayout>
 

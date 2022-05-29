@@ -7,14 +7,14 @@
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
-                <Setter Property="Shell.BackgroundColor" Value="#4E80B4" />
+                <Setter Property="Shell.BackgroundColor" Value="#663a82" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="#4E80B4" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#663a82" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="White"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="Black"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
@@ -38,18 +38,18 @@
     <TabBar x:Name="shellItems">
         <ShellContent 
             Title="Profile"
-                      Icon="myLogo.png"
+                      Icon="profile.png"
                       Route="ForgotPasswordPage"
-                      ContentTemplate="{DataTemplate local:ForgotPasswordPage}">
+                      ContentTemplate="{DataTemplate local:ProfilePage}">
         </ShellContent>
         <ShellContent Title="Home"
                       x:Name="shellHomePage"
-                      Icon="myLogo.png"
+                      Icon="home.png"
                       Route="HomePage"
                       ContentTemplate="{DataTemplate local:HomePage}">
         </ShellContent>
         <ShellContent Title="Chat"
-                      Icon="myLogo.png"
+                      Icon="chat.png"
                       Route="TestPage"
                       ContentTemplate="{DataTemplate local:ChatRoom}">
         </ShellContent>

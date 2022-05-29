@@ -12,9 +12,9 @@ namespace FinalProject.Models
 
         public int userID;
 
-        public int phone_number;
+        public String phone_number;
 
-        public int DOB;
+        public String DOB;
 
         public String name;
 

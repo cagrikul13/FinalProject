@@ -31,7 +31,7 @@
                WidthRequest="260"
                Margin="0,20,0,0">
                 <StackLayout Orientation="Horizontal">
-                    <Entry Placeholder="Email Address" 
+                    <Entry Placeholder="Username" 
                        TextColor="Black" 
                        FontFamily="SegoePlain"
                        FontAttributes="None" 
@@ -53,9 +53,10 @@
                        TextColor="Black"
                        FontFamily="SegoePlain"
                        FontAttributes="None" 
+                       IsPassword="True"
                        HorizontalOptions="FillAndExpand" 
                        Margin="20,0,20,0"
-                       Text="{Binding Username}"/>
+                       Text="{Binding Password}"/>
 
                 </StackLayout>
             </Frame>
@@ -73,7 +74,7 @@
                        FontAttributes="None" 
                        HorizontalOptions="FillAndExpand" 
                        Margin="20,0,20,0"
-                       Text="{Binding Username}"/>
+                       Text="{Binding Name}"/>
 
                 </StackLayout>
             </Frame>
@@ -91,7 +92,7 @@
                        FontAttributes="None" 
                        HorizontalOptions="FillAndExpand" 
                        Margin="20,0,20,0"
-                       Text="{Binding Username}"/>
+                       Text="{Binding DOB}"/>
 
                 </StackLayout>
             </Frame>
@@ -109,7 +110,7 @@
                        FontAttributes="None" 
                        HorizontalOptions="FillAndExpand" 
                        Margin="20,0,20,0"
-                       Text="{Binding Username}"/>
+                       Text="{Binding PhoneNumber}"/>
 
                 </StackLayout>
             </Frame>
@@ -123,7 +124,7 @@
             BackgroundColor="#ffaf87"
             CornerRadius="30"
             Text="SIGNUP"
-            Command="{Binding LoginCommand}"
+            Command="{Binding SignUpCommand}"
             WidthRequest="300"
             VerticalOptions="Fill"/>
             <Label Text="You can sign up with" 

@@ -17,13 +17,9 @@ namespace FinalProject.Views
             InitializeComponent();
         }
 
-        private void ScannerView_OnScanResult(ZXing.Result result)
+        private async void ScannerView_OnScanResult(ZXing.Result result)
         {
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                await DisplayAlert("Scanned Result", result.Text, "OK");
-            }
-                );
+           await Navigation.PushAsync(new DuringActivity());
         }
     }
 }

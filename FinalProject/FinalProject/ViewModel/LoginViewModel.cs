@@ -59,13 +59,12 @@ namespace FinalProject.ViewModel
                 if (user != null)
                     if (Username == user.username && Password == user.password)
                     {
-                        await App.Current.MainPage.DisplayAlert("Successfull Login", "", "OK");
                         Application.Current.MainPage = new AppShell();
                     }
                     else
-                        await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Email and Password", "OK");
+                        await App.Current.MainPage.DisplayAlert("Login Fail!", "Please enter correct Email and Password", "OK");
                 else
-                    await App.Current.MainPage.DisplayAlert("Login Fail", "User not found", "OK");
+                    await App.Current.MainPage.DisplayAlert("Login Fail!", "User not found", "OK");
             }
         }
 

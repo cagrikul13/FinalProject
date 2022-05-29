@@ -35,6 +35,42 @@ namespace FinalProject.ViewModel
             }
         }
 
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Name"));
+            }
+        }
+
+        private string dob;
+
+        public string DOB
+        {
+            get { return dob; }
+            set
+            {
+                dob = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("DOB"));
+            }
+        }
+
+        private string phone_number;
+
+        public string PhoneNumber
+        {
+            get { return phone_number; }
+            set
+            {
+                phone_number = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("PhoneNumber"));
+            }
+        }
+
         private string confirmpassword;
         public string ConfirmPassword
         {
@@ -52,10 +88,7 @@ namespace FinalProject.ViewModel
             {
                 return new Command(() =>
                 {
-                    if (Password == ConfirmPassword)
-                        SignUp();
-                    else
-                        App.Current.MainPage.DisplayAlert("", "Password must be same as above!", "OK");
+                    SignUp();
                 });
             }
         }
@@ -67,7 +100,7 @@ namespace FinalProject.ViewModel
             else
             {
                 //call AddUser function which we define in Firebase helper class    
-                var user = await FirebaseHelper.AddUser(Username, Password);
+                var user = await FirebaseHelper.AddUser(Username, Password, Name, DOB, PhoneNumber);
                 //AddUser return true if data insert successfuly     
                 if (user)
                 {

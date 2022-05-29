@@ -18,7 +18,7 @@
                 BackgroundColor="#4CE0B3" 
                 HorizontalOptions="Center" VerticalOptions="Center"
                 Command="{Binding Login}"/>
-        <Button Text="Sign Up" 
+        <Button Text="Signup" 
                 FontFamily="SegoeBold"
                 TextColor="White" 
                 BackgroundColor="#FFAF87" 
