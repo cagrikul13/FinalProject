@@ -87,7 +87,7 @@
 
             <StackLayout>
                 <!--Activity swiping controls -->
-                <CarouselView ItemsSource="{Binding ActivitiesList}"
+                <CarouselView ItemsSource="{Binding .}"
                               x:Name="myActivityList">
                     <CarouselView.ItemsLayout>
                         <LinearItemsLayout
@@ -105,35 +105,41 @@
                                        BorderColor="#FFAF87">
                                     <AbsoluteLayout HorizontalOptions="FillAndExpand"
                                                     VerticalOptions="FillAndExpand">
-                                        <Image Source="{Binding activityPicture}"
-                                           AbsoluteLayout.LayoutBounds="1,1,1,1"
-                                           AbsoluteLayout.LayoutFlags="All"
-                                           Aspect="AspectFit"/>
+                                        <!--<Image Source="{Binding activityPicture}"
+                                               AbsoluteLayout.LayoutBounds="1,1,1,1"
+                                               AbsoluteLayout.LayoutFlags="All"
+                                               Aspect="AspectFit"/>-->
                                         <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1"
-                                         AbsoluteLayout.LayoutFlags="All"
-                                         BackgroundColor="Transparent"
-                                                     Padding="15"
-                                         
-                                         >
+                                                     AbsoluteLayout.LayoutFlags="All"
+                                                     BackgroundColor="Transparent"
+                                                     Padding="15">
                                             <Frame CornerRadius="20"
                                                Opacity="0.6"
-                                               Margin="0,70,0,0"
+                                               Margin="0,50,0,0"
                                                HasShadow="True"
-                                               BackgroundColor="Black"
-                                               >
-                                                <StackLayout Spacing="20">
-                                                    <Label Text="{Binding activityTime}"
+                                               BackgroundColor="Black">
+                                                <StackLayout Spacing="10">
+                                                    <Label Text="{Binding activityDate}"
                                                        FontFamily="SegoePlain"
                                                        TextColor="#FFAF87"
                                                        FontSize="20"/>
+                                                    <Label Text="{Binding activityTime}"
+                                                           FontFamily="SegoePlain"
+                                                           TextColor="#FFAF87"
+                                                           FontSize="20"/>
                                                     <Label Text="{Binding activityCategory}"
                                                        FontFamily="SegoePlain"
                                                        TextColor="#FFAF87"
                                                        FontSize="20"/>
-                                                    <Label Text="{Binding activityLocation}"
-                                                       FontFamily="SegoePlain"
-                                                       TextColor="#FFAF87"
-                                                       FontSize="20"/>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="Maximum participiant number:"
+                                                               TextColor="#FFAF87"
+                                                               FontFamily="SegoePlain"/>
+                                                        <Label Text="{Binding activityParticipiantCount}"
+                                                               TextColor="#FFAF87"
+                                                               FontFamily="SegoePlain"/>
+                                                    </StackLayout>
+                                                    
                                                 </StackLayout>
                                             </Frame>
 

@@ -177,18 +177,26 @@ namespace FinalProject.ViewModel
 
         public async Task<List<Activities>> GetActivities()
         {
-            return (await firebase
-                .Child("Activities")
-                .OnceAsync<Activities>())
-                .Select((item) => 
-                new Activities 
-                {
-                    activityCategory = item.Object.activityCategory,
-                    activityDate = item.Object.activityDate,
-                    activityTime = item.Object.activityTime,
-                    activityParticipiantCount = item.Object.activityParticipiantCount
+            try
+            {
+                return (await firebase
+               .Child("Activities")
+               .OnceAsync<Activities>())
+               .Select((item) =>
+               new Activities
+               {
+                   activityCategory = item.Object.activityCategory,
+                   activityDate = item.Object.activityDate,
+                   activityTime = item.Object.activityTime,
+                   activityParticipiantCount = item.Object.activityParticipiantCount
 
-                }).ToList();
+               }).ToList();
+            }catch(Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return null;
+            }
+           
         } 
 
     }

@@ -1,4 +1,5 @@
-﻿using FinalProject.ViewModel;
+﻿using FinalProject.Models;
+using FinalProject.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,6 +15,7 @@ namespace FinalProject.Views
     public partial class HomePage : ContentPage
     {
         FirebaseHelper firebase = new FirebaseHelper();
+        List<Activities> activityList;
         HomePageViewModel homePageVM; 
         public HomePage()
         {
@@ -24,7 +26,7 @@ namespace FinalProject.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            var activityList = await firebase.GetActivities();
+            activityList = await firebase.GetActivities();
             myActivityList.BindingContext = activityList;
         }
 

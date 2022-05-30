@@ -13,9 +13,10 @@ namespace FinalProject
         
         public App()
         {   
-            InitializeComponent();           
-            MainPage = new NavigationPage(new MainPage());
-            
+            InitializeComponent();
+            var splashPage = new NavigationPage(new SplashPage());
+            MainPage = splashPage;
+
         }
 
         protected override void OnStart()

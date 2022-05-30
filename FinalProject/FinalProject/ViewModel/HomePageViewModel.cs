@@ -11,10 +11,8 @@ using Xamarin.Forms;
 
 namespace FinalProject.ViewModel
 {
-    class HomePageViewModel : INotifyPropertyChanged
+    public class HomePageViewModel : INotifyPropertyChanged
     {
-        
-
 
         private ObservableCollection<Activities> activitiesList;
 
@@ -26,11 +24,7 @@ namespace FinalProject.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public HomePageViewModel()
-        {
-
-           
-        }
+        public HomePageViewModel(){ }
         public Command AddActivityButton
         {
             get

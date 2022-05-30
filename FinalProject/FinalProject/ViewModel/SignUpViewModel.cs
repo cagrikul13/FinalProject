@@ -1,4 +1,5 @@
 ﻿using FinalProject.Views;
+using Firebase.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,8 @@ namespace FinalProject.ViewModel
 {
     public class SignUpViewModel : INotifyPropertyChanged
     {
+
+        public string webAPIkey = "AIzaSyDBOxgOxBZKB9jKezcVez5ho-nG1aIYmX8";
         private string username;
         
         public string Username
@@ -104,7 +107,8 @@ namespace FinalProject.ViewModel
                 //AddUser return true if data insert successfuly     
                 if (user)
                 {
-                    await App.Current.MainPage.DisplayAlert("SignUp Success", "", "Ok");
+                    var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));
+                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Username, Password);
                     //Navigate to Wellcom page after successfuly SignUp    
                     //pass user email to welcom page    
                     Application.Current.MainPage = new AppShell();
