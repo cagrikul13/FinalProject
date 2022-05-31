@@ -10,15 +10,15 @@
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" HasShadow="True" WidthRequest="100" HeightRequest="100" Padding="-10" >
+        <StackLayout Padding="30">
+            <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" HasShadow="True" WidthRequest="100" HeightRequest="300" Padding="-10" >
                 <Image Source="cagriPhoto.png" WidthRequest="250" HeightRequest="250" ></Image>
             </Frame>
             <Label Text="Çağrı" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
             <Label Text="24" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
-            <Label Text="Eskişehir" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"></Label>
+            <Label Text="Eskişehir" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" Margin="0,0,0,20"></Label>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HeightRequest="100" WidthRequest="300">
-                <Grid RowSpacing="0" ColumnSpacing="50" HorizontalOptions="CenterAndExpand">
+                <Grid RowSpacing="0" ColumnSpacing="0" HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" ></RowDefinition>
                         <RowDefinition Height="50" ></RowDefinition>
@@ -27,8 +27,8 @@
                         <ColumnDefinition Width="200" ></ColumnDefinition>
                         <ColumnDefinition Width="200"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Çağrı" HorizontalOptions="Start" Margin="45,0,0,0" FontSize="20" Grid.Column="0" Grid.Row="0"></Label>
-                    <Label Text="Çağrı" HorizontalOptions="End" Margin="0,0,120,0" FontSize="20" Grid.Column="1" Grid.Row="0"></Label>
+                    <Label Text="Rating" HorizontalOptions="Center" Margin="0,0,60,0" FontSize="20" Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Text="Favorite Activity" HorizontalOptions="Start" Margin="0,0,0,0" FontSize="20" Grid.Column="1" Grid.Row="0"></Label>
                     <Frame BackgroundColor="White" 
                            BorderColor="Black" 
                            Padding="0" 
@@ -53,22 +53,30 @@
             </StackLayout>
             
             <StackLayout>
-                <Label Text="Recent Activities" FontSize="20" HorizontalOptions="Center"></Label>
+                <Label Text="Recent Activities" FontSize="20" HorizontalOptions="Center" Margin="0,20,0,0"></Label>
                 
-                <!-- ListView olarak güncellenip data alabilir hale getirilecek <-->
                 <ScrollView>
-                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
-                        <Label>fdsdsgfdsgfdgfds</Label>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,5,0,0">
+                        <ListView ItemsSource="{Binding .}"
+                                  x:Name="ppActivityList"
+                                  HorizontalOptions="CenterAndExpand"
+                                  >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="0" CornerRadius="30" BackgroundColor="Transparent">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" >
+                                                <Label HorizontalTextAlignment="Center" Text="{Binding activityCategory}"></Label>
+                                                <Label HorizontalTextAlignment="Center">/</Label>
+                                                <Label HorizontalTextAlignment="Center" Text="{Binding activityDate}"></Label>
+                                                <Label HorizontalTextAlignment="Center">/</Label>
+                                                <Label HorizontalTextAlignment="Center">Rating : 5⭐</Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
