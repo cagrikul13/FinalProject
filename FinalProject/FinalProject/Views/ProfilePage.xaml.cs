@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -31,6 +31,12 @@ namespace FinalProject.Views
             profilePageList = await firebase.GetActivities();
             ppActivityList.BindingContext = profilePageList;
 
+        }
+
+        private void LogoutClicked(object sender, EventArgs e)
+        {
+            Preferences.Remove("MyFirebaseRefreshToken");
+            App.Current.MainPage.Navigation.PushAsync(new LoginPage()); 
         }
     }
 

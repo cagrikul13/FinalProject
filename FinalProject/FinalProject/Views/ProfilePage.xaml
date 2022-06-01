@@ -8,7 +8,12 @@
     <NavigationPage.TitleView>
         <Label TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20">Profile</Label>
     </NavigationPage.TitleView>
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="logout.png" Clicked="LogoutClicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout Padding="30">
             <Frame CornerRadius="30" VerticalOptions="Center" HorizontalOptions="Center" HasShadow="True" WidthRequest="100" HeightRequest="300" Padding="-10" >
