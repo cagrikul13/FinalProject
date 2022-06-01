@@ -29,23 +29,10 @@ namespace FinalProject.Views
             InitializeComponent();
             homePageVM = new HomePageViewModel();
             BindingContext = homePageVM;
-            GetCurrentInfo();
 
         }
 
-        private async void GetCurrentInfo()
-        {
-            try
-            {
-                var savedAuth = JsonConvert.DeserializeObject<Firebase.Auth.FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
-                var refreshedContent = await firebaseAuthProvider.RefreshAuthAsync(savedAuth);
-                Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(refreshedContent));
-                usernameFromFirebase.Text = savedAuth.User.DisplayName;
-            }catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
+        
 
         protected override async void OnAppearing()
         {

@@ -3,40 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.ChatPage"
              BackgroundImageSource="mainBackground.png">
-    <Grid RowSpacing="10" ColumnSpacing="50">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <ListView Grid.Row="0" ItemsSource="{Binding .}" x:Name="chatListView"
+    <StackLayout>
+        
+        <Grid RowSpacing="10" ColumnSpacing="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ListView Grid.RowSpan="1" ItemsSource="{Binding .}" x:Name="chatListView"
 				SeparatorVisibility="Default">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Frame Margin="0,10,0,0" Padding="8" CornerRadius="30" BackgroundColor="White">
-                                <Label Text="{Binding userMessage}"/>
-                            </Frame>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Grid Grid.Row="1" Padding="15">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Frame Grid.Column="0"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding username}"
+                                  TextColor="Black"
+                                  Detail="{Binding userMessage}">
+                            
+                            <!--<StackLayout>
+                                <Label x:Name="chatUser"/>
+                                <Frame Margin="0,10,0,0" Padding="8" CornerRadius="30" BackgroundColor="White">
+                                    <Label Text="{Binding userMessage}"/>
+                                </Frame>
+                            </StackLayout>-->
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Grid.Row="1" Padding="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0"
                    CornerRadius="30"
                    Padding="8"
                    VerticalOptions="Center"
                    BackgroundColor="Beige">
-                <Entry Placeholder="Start typing..."  x:Name="messageToSent"/>
-            </Frame>
-            <Button Text="Send!" BackgroundColor="#4CE0B3" CornerRadius="20" VerticalOptions="Center" Grid.Column="1" Clicked="sendButtonClicked"/>
+                    <Entry Placeholder="Start typing..."  x:Name="messageToSent"/>
+                </Frame>
+                <Button Text="Send!" BackgroundColor="#4CE0B3" CornerRadius="20" VerticalOptions="Center" Grid.Column="1" Clicked="sendButtonClicked"/>
+            </Grid>
+
         </Grid>
-        
-    </Grid>
+    </StackLayout>
+    
     
 </ContentPage>

@@ -8,6 +8,9 @@ using FinalProject.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft.Json;
+using Xamarin.Essentials;
+using Firebase.Auth;
 
 namespace FinalProject.Views
 {
@@ -15,29 +18,51 @@ namespace FinalProject.Views
     public partial class ChatPage : ContentPage
     {
         FirebaseHelper fbClient = new FirebaseHelper();
+        public static string webAPIkey = "AIzaSyDBOxgOxBZKB9jKezcVez5ho-nG1aIYmX8";
+        FirebaseAuthProvider firebaseAuthProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));
 
         Room room = new Room();
 
         Users user = new Users();
+
+        
+
         public ChatPage()
         {
             InitializeComponent();
-
+            GetCurrentInfo();
             MessagingCenter.Subscribe<ChatRoom, Room>(this, "RoomProp", (page, data) =>
             {
                 room = data;
                 chatListView.BindingContext = fbClient.subChat(data.Key);
                 MessagingCenter.Unsubscribe<ChatRoom, Room>(this, "RoomProp");
             });
-        }        
+        }
+        private async Task<string> GetCurrentInfo()
+        {
+            try
+            {
+                var savedAuth = JsonConvert.DeserializeObject<Firebase.Auth.FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
+                var refreshedContent = await firebaseAuthProvider.RefreshAuthAsync(savedAuth);
+                Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(refreshedContent));
+                return savedAuth.User.DisplayName;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+
+            }
+        }
 
         private async void sendButtonClicked(object sender, EventArgs e)
         {
-
+            
             var chatObject = new Chat
             {
                 userMessage = messageToSent.Text,
-                username = user.username
+                username = await GetCurrentInfo()
             };
             await fbClient.saveMessage(chatObject, room.Key);
             messageToSent.Text = String.Empty;

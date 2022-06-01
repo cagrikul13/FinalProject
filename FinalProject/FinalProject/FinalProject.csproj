@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="ExtendedShellTabBar" Version="1.0.2" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.49.0" />
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
 	<PackageReference Include="FirebaseAuthentication.net" Version="3.7.2" />
 	<PackageReference Include="ZXing.Net.Mobile" Version="3.1.0-beta2" />
