@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FinalProject.Views.ChatPage">
+             x:Class="FinalProject.Views.ChatPage"
+             BackgroundImageSource="mainBackground.png">
     <Grid RowSpacing="10" ColumnSpacing="50">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ListView Grid.Row="0" ItemsSource="{Binding .}" x:Name="chatListView"
-				SeparatorVisibility="None">
+				SeparatorVisibility="Default">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Label Text="{Binding userMessage}"/>
+                            <Frame Margin="0,10,0,0" Padding="8" CornerRadius="30" BackgroundColor="White">
+                                <Label Text="{Binding userMessage}"/>
+                            </Frame>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
@@ -32,7 +35,6 @@
                 <Entry Placeholder="Start typing..."  x:Name="messageToSent"/>
             </Frame>
             <Button Text="Send!" BackgroundColor="#4CE0B3" CornerRadius="20" VerticalOptions="Center" Grid.Column="1" Clicked="sendButtonClicked"/>
-            <Button/>
         </Grid>
         
     </Grid>

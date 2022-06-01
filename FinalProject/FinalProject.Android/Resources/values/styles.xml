@@ -16,6 +16,7 @@
     <!--<item name="colorAccent">#FF4081</item>-->
     
   </style>
+	
   <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:windowBackground">@drawable/SplashScreen</item>
     <item name="android:windowNoTitle">true</item>
