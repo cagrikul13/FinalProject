@@ -117,8 +117,8 @@ namespace FinalProject.ViewModel
                 var user = await FirebaseHelper.AddUser(Email, Password, Username, Name, DOB, PhoneNumber);
                 //AddUser return true if data insert successfuly     
                 if (user)
-                {                    
-                    Application.Current.MainPage = new AppShell();
+                {
+                    App.Current.MainPage.Navigation.PushAsync(new LoginPage());
                 }
                 else
                     await Application.Current.MainPage.DisplayAlert("Error", "SignUp Fail", "OK");
