@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="mainBackground.png">
 
-    <StackLayout Padding="0" >
+    <StackLayout Padding="0" VerticalOptions="Center">
         <Image Source="myLogo.png" WidthRequest="300"></Image>
         
         <Label Text="Want to socialize?" TextColor="#685F64" Margin="0,50,0,0" FontFamily="SegoeBold" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>

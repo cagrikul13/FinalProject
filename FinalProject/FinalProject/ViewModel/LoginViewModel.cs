@@ -53,18 +53,25 @@ namespace FinalProject.ViewModel
                 await App.Current.MainPage.DisplayAlert("Empty Values", "Please enter Email and Password", "OK");
             else
             {
-                //call GetUser function which we define in Firebase helper class    
-                var user = await FirebaseHelper.GetUser(Username);
-                //firebase return null valuse if user data not found in database    
-                if (user != null)
+                try
+                {
+                    FirebaseHelper.GetUser(Username, Password);
+                    Application.Current.MainPage = new AppShell();
+                }catch(Exception e)
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", e.Message, "OK");
+                }
+                
+                
+                /*if (user != null)
                     if (Username == user.username && Password == user.password)
                     {
-                        Application.Current.MainPage = new AppShell();
+                        
                     }
                     else
                         await App.Current.MainPage.DisplayAlert("Login Fail!", "Please enter correct Email and Password", "OK");
                 else
-                    await App.Current.MainPage.DisplayAlert("Login Fail!", "User not found", "OK");
+                    await App.Current.MainPage.DisplayAlert("Login Fail!", "User not found", "OK");*/
             }
         }
 

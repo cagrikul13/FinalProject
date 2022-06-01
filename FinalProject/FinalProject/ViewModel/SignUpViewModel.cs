@@ -23,6 +23,17 @@ namespace FinalProject.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs("Username"));
             }
         }
+        private string email;
+
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Email"));
+            }
+        }
 
         private string password;
 
@@ -103,14 +114,10 @@ namespace FinalProject.ViewModel
             else
             {
                 //call AddUser function which we define in Firebase helper class    
-                var user = await FirebaseHelper.AddUser(Username, Password, Name, DOB, PhoneNumber);
+                var user = await FirebaseHelper.AddUser(Email, Password, Username, Name, DOB, PhoneNumber);
                 //AddUser return true if data insert successfuly     
                 if (user)
-                {
-                    var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));
-                    var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(Username, Password);
-                    //Navigate to Wellcom page after successfuly SignUp    
-                    //pass user email to welcom page    
+                {                    
                     Application.Current.MainPage = new AppShell();
                 }
                 else

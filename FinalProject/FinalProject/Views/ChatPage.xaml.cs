@@ -33,11 +33,11 @@ namespace FinalProject.Views
 
         private async void sendButtonClicked(object sender, EventArgs e)
         {
-            
+
             var chatObject = new Chat
             {
                 userMessage = messageToSent.Text,
-                username = user.name
+                username = user.username
             };
             await fbClient.saveMessage(chatObject, room.Key);
             messageToSent.Text = String.Empty;

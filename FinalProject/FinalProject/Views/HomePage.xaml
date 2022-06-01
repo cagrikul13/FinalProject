@@ -16,6 +16,10 @@
         </Grid.RowDefinitions>
         <StackLayout Spacing="20" Padding="20" Grid.Row="0">
             <StackLayout>
+                <Label x:Name="usernameFromFirebase"
+                       FontSize="50"
+                       FontFamily="SegoePlain"
+                       TextColor="black"/>
                 <!-- Searchbar and label layout -->
                 <Frame Padding="0" CornerRadius="20">
                     <SearchBar Placeholder="Search for an activity"

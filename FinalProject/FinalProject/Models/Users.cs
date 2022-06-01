@@ -8,15 +8,15 @@ namespace FinalProject.Models
     {
         public String username;
 
+        public String email;
+
         public String password;
 
-        public int userID;
+        public String userID;
 
         public String phone_number;
 
         public String DOB;
-
-        public String name;
 
         public float rating;
     }

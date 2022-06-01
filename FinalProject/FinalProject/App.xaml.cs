@@ -16,6 +16,7 @@ namespace FinalProject
             InitializeComponent();
             var splashPage = new NavigationPage(new SplashPage());
             MainPage = splashPage;
+            
 
         }
 

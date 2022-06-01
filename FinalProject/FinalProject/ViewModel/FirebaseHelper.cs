@@ -1,20 +1,27 @@
 ﻿using FinalProject.Models;
+
+using Firebase.Auth;
+
 using Firebase.Database;
 using Firebase.Database.Query;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Essentials;
 
 namespace FinalProject.ViewModel
 {
     public class FirebaseHelper
     {
         public static FirebaseClient firebase = new FirebaseClient("https://actio-5ec97-default-rtdb.firebaseio.com/");
-    
+
+        public static string webAPIkey = "AIzaSyDBOxgOxBZKB9jKezcVez5ho-nG1aIYmX8";
+
         //User Operations
         public static async Task<List<Users>> GetAllUsers()
         {
@@ -38,40 +45,56 @@ namespace FinalProject.ViewModel
             }
         }
         
-        public static async Task<Users> GetUser(string username)
+        public static async void GetUser(string username,string password)
         {
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));      
+            
+            
             try
             {
-                var allUsers = await GetAllUsers();
+                var auth = await authProvider.SignInWithEmailAndPasswordAsync(username, password);
+                var content = await auth.GetFreshAuthAsync();
+                var serializedContent = JsonConvert.SerializeObject(content);
+                Preferences.Set("MyFirebaseRefreshToken", serializedContent);
+                /*var allUsers = await GetAllUsers();
                 await firebase
                     .Child("Users")
                     .OnceAsync<Users>();
-                return allUsers.Where(a => a.username == username).FirstOrDefault();
+                return allUsers.Where(a => a.username == username).FirstOrDefault();*/
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Error:{e}");
-                return null;
+                
             }
         }
-        
-        public static async Task<bool> AddUser(string Username, string Password, string Name, string DateOfBirth, string PhoneNumber)
+        public static async Task<bool> AddUser(string Email, string Password,string username, string Name,string DateOfBirth, string PhoneNumber)
         {
             try
             {
-                await firebase.Child("Users").PostAsync(new Users()
+                var auth = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));
+                var user = await auth.CreateUserWithEmailAndPasswordAsync(Email, Password, username);
+                string gettoken = user.FirebaseToken;
+                FirebaseAuth firebaseAuth = new FirebaseAuth();
+
+                
+
+
+                await firebase.Child("Users").PutAsync(new Users()
                 {
-                    username = Username, 
+                    email = user.User.Email,
                     password = Password,
-                    name = Name,
-                    DOB = DateOfBirth, 
-                    phone_number = PhoneNumber, 
+                    userID = user.User.LocalId,
+                    username = user.User.DisplayName,
+                    DOB = DateOfBirth,
+                    phone_number = PhoneNumber,
                 });
+                
                 return true;
             }
             catch (Exception e )
             {
-                Debug.WriteLine($"Error:{e}");
+                Debug.WriteLine($"Error:{e.Message}");
                 return false;
             }
         }
@@ -155,12 +178,14 @@ namespace FinalProject.ViewModel
         }
 
         //Activity Operations
-        public static async Task<bool> AddActivity(string ActivityCategory, string ActivityDate, string ActivityTime, string ActivityCategoryParticipiantCount)
+        public static async Task<bool> AddActivity( string ActivityCategory, string ActivityDate, string ActivityTime, string ActivityCategoryParticipiantCount)
         {
             try
             {
+
                 await firebase.Child("Activities").PostAsync(new Activities()
                 {
+
                     activityCategory = ActivityCategory,
                     activityDate = ActivityDate,
                     activityTime = ActivityTime,

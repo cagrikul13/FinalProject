@@ -1,5 +1,7 @@
 ﻿using FinalProject.Models;
 using FinalProject.Views;
+using Firebase.Auth;
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +16,8 @@ namespace FinalProject.ViewModel
     public class HomePageViewModel : INotifyPropertyChanged
     {
 
+      
+
         private ObservableCollection<Activities> activitiesList;
 
         public ObservableCollection<Activities> ActivitiesList
@@ -24,7 +28,12 @@ namespace FinalProject.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public HomePageViewModel(){ }
+       
+
+        public HomePageViewModel()
+        {
+            
+        }
         public Command AddActivityButton
         {
             get
