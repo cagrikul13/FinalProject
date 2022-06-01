@@ -6,7 +6,7 @@
              NavigationPage.HasNavigationBar="false">
              
     <ContentPage.Content>
-        <StackLayout Padding="30">
+        <StackLayout Padding="30" Spacing="15">
             <Image Source="actioTitle.png" WidthRequest="150">
                 
             </Image>
@@ -116,8 +116,6 @@
             </Frame>
             <Button 
             FontFamily="SegoeBold"
-            BorderColor="Black"
-            BorderWidth="1"
             TextColor="White"
             HorizontalOptions="CenterAndExpand"
             Margin="20,20,20,0"

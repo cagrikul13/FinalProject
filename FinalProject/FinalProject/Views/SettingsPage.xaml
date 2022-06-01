@@ -64,11 +64,10 @@
                 <Label Text="Update automatically" FontFamily="SegoeBold"></Label>
                 <Switch IsToggled="false" HorizontalOptions="EndAndExpand"></Switch>
             </StackLayout>
-            <BoxView 
-                   HeightRequest="1"
+            <BoxView HeightRequest="1"
                    Color="LightGray"
                    Margin ="0, 0, 0, 0"/>
-            <Image Source="myLogo.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="250" ></Image>
+            <Image Source="myLogo.png" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="250" ></Image>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

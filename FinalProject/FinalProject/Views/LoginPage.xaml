@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.LoginPage"
              BackgroundImageSource="loginBackground.png"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="false">
     <StackLayout Padding="20" Spacing="10">
         <Image Source="actioTitle.png"
                HorizontalOptions="Center"
