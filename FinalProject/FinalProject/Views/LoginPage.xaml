@@ -16,7 +16,7 @@
                TextColor="Black" 
                Margin="40,50,0,0"
                ></Label>
-        <Label Text="Sign in to continue" 
+        <Label Text="Log in to continue" 
                FontFamily="SegoePlain"
                FontSize="20" 
                TextColor="Black" 
@@ -29,7 +29,7 @@
                WidthRequest="300"
                Margin="0,30,0,0">
             <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="Username"
+                <Entry Placeholder="Email"
                        FontFamily="SegoePlain"
                        TextColor="Black" 
                        FontAttributes="None" 
@@ -38,10 +38,12 @@
                        Text="{Binding Username}"/>
                 <Frame BackgroundColor="Transparent" 
                        HeightRequest="42" WidthRequest="42" 
-                       CornerRadius="25" Padding="0" Margin="5">
+                       CornerRadius="25" Padding="0" Margin="5,5,10,5">
                     <Image Source="envelope.png" 
                            Aspect="AspectFill" 
-                           Margin="5"/>
+                           Margin="5">
+                        
+                    </Image>
                 </Frame>
 
             </StackLayout>
@@ -62,14 +64,20 @@
                        HorizontalOptions="FillAndExpand" 
                        Margin="20,0,20,0"
                        IsPassword="True"
+                       x:Name="loginPasswordEntry"
                        Text="{Binding Password}"/>
                 <Frame BackgroundColor="White" 
                        HeightRequest="40" WidthRequest="40" 
-                       CornerRadius="30" Padding="0" Margin="5">
-                    <ImageButton Source="see.png"
-                                 BackgroundColor="Transparent"
+                       CornerRadius="30" Padding="0" Margin="5,5,10,5">
+                    <Image Source="see.png"
+                           BackgroundColor="Transparent"
                            Aspect="AspectFill" 
-                           Margin="0"/>
+                           Margin="2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="passwordImageClicked"
+                                                  NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Frame>
             </StackLayout>
         </Frame>

@@ -12,7 +12,7 @@
         WidthRequest="300"
         HeightRequest="300"
         IsVisible="True"
-        BarcodeValue="amcık">
+        x:Name="barcodeValue">
         <zxing:ZXingBarcodeImageView.BarcodeOptions>
                 <zxcm:EncodingOptions Width="300" Height="300"/>
             </zxing:ZXingBarcodeImageView.BarcodeOptions>

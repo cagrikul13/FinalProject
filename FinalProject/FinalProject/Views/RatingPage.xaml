@@ -16,9 +16,11 @@
                                HorizontalOptions="Center"
                                FlowDirection="LeftToRight"
                                EmptyStarImage="emptyStar"
-                               FillStarImage="fillStar">
+                               FillStarImage="fillStar"
+                               >
                 
             </fRating:RatingBar>
+            <Button Text="RATE" FontFamily="SegoePlain" FontSize="20" BackgroundColor="#ff6961" CornerRadius="20" Clicked="rateBtnClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

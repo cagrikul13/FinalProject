@@ -30,7 +30,7 @@ namespace FinalProject.Views
         public ChatPage()
         {
             InitializeComponent();
-            GetCurrentInfo();
+            chatListView.TabIndex = 0;
             MessagingCenter.Subscribe<ChatRoom, Room>(this, "RoomProp", (page, data) =>
             {
                 room = data;
@@ -42,10 +42,12 @@ namespace FinalProject.Views
         {
             try
             {
-                var savedAuth = JsonConvert.DeserializeObject<Firebase.Auth.FirebaseAuth>(Preferences.Get("MyFirebaseRefreshToken", ""));
+                var savedAuth = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("myToken", ""));
                 var refreshedContent = await firebaseAuthProvider.RefreshAuthAsync(savedAuth);
-                Preferences.Set("MyFirebaseRefreshToken", JsonConvert.SerializeObject(refreshedContent));
+                Preferences.Set("myToken", JsonConvert.SerializeObject(refreshedContent));
+                
                 return savedAuth.User.DisplayName;
+
 
             }
             catch (Exception e)
@@ -66,6 +68,17 @@ namespace FinalProject.Views
             };
             await fbClient.saveMessage(chatObject, room.Key);
             messageToSent.Text = String.Empty;
+        }
+
+        private async void startClicked(object sender, EventArgs e)
+        {
+            var result = await DisplayAlert("", "Your event will start. Are you sure?", "Confirm", "Cancel");
+
+            if (result)
+            {
+                await Navigation.PushModalAsync(new DuringActivity());
+            }
+            
         }
     }
 }

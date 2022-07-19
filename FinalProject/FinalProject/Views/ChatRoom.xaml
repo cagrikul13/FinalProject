@@ -6,17 +6,16 @@
         <ToolbarItem IconImageSource="qrcode.png"
                      Clicked="QR_Clicked"/>
     </ContentPage.ToolbarItems>
-    <Grid>
+    <Grid BackgroundColor="AntiqueWhite">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackLayout Grid.Row="0" Spacing="20">
+        <StackLayout Grid.Row="0" Spacing="20" Padding="10">
             <ListView ItemsSource="{Binding .}" x:Name="myListView"
-                  RowHeight="70"
-                  IsPullToRefreshEnabled="True"
-                  ItemSelected="myListView_ItemSelected"
-                  Refreshing="myListView_Refreshing"
-                      SeparatorColor="Black">
+                      RowHeight="70"
+                      IsPullToRefreshEnabled="True"
+                      ItemSelected="myListView_ItemSelected"
+                      Refreshing="myListView_Refreshing">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -25,14 +24,18 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
-                                
-                                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3">
-                                    <Image Source="myLogo.png"/>
+
+                                <StackLayout Orientation="Horizontal" Spacing="20" Grid.ColumnSpan="3">
+                                    <Frame Padding="10" CornerRadius="30" HasShadow="True">
+                                        <Image Source="people.jpg"/>    
+                                    </Frame>
+                                    
                                     <Label Text="{Binding roomName}"
                                                FontSize="25"
                                            HorizontalOptions="StartAndExpand"
                                            VerticalOptions="Center"
-                                               FontFamily="SegoeBold"/>
+                                               FontFamily="SegoePlain"
+                                           TextColor="Black"/>
                                  </StackLayout>
                                 
                                 
@@ -55,6 +58,7 @@
             <Button 
                 Clicked="roomAddBtnClicked"
                 Text="Create New Room"
+                FontFamily="SegoeBold"
                 BackgroundColor="Transparent"/>
         </Frame>
         

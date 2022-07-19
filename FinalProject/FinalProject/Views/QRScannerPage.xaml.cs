@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,9 @@ namespace FinalProject.Views
 
         private async void ScannerView_OnScanResult(ZXing.Result result)
         {
-           await Navigation.PushAsync(new DuringActivity());
+            var Result = result.ToString();
+            await Navigation.PushAsync(new DuringActivity());
+           
         }
     }
 }

@@ -5,29 +5,25 @@
              BackgroundImageSource="HomePageBackground.png"
              NavigationPage.HasNavigationBar="true"
              NavigationPage.HasBackButton="True">
-    <NavigationPage.TitleView>
-        <Label TextColor="White" HorizontalOptions="Center" FontFamily="SegoeBold" FontSize="20">Create an Activity</Label>
-    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
-        <StackLayout Padding="15" Margin="0,0,0,0">
+        <StackLayout Padding="15" Spacing="20">
             <StackLayout Padding="50" Spacing="50">
-                <Frame Padding="0" CornerRadius="30" Opacity="0.6">
-            <Picker HorizontalTextAlignment="Center"
-                    Title="Select a Category"
-                    TitleColor="MediumPurple"
-                    FontFamily="SegoePlain"
-                    x:Name="SelectCategory"
-                    SelectedItem="{Binding ActivityCategory}">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Indoor Sports</x:String>
-                        <x:String>Outdoor Sports</x:String>
-                        <x:String>Gaming</x:String>
-                        <x:String>Art</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-                </Frame>
+                <StackLayout Orientation="Horizontal">
+                    <Frame Padding="0" CornerRadius="30" Opacity="0.6" HorizontalOptions="EndAndExpand" WidthRequest="300">
+                        <Picker HorizontalTextAlignment="Center"
+                                Title="Select a Category"
+                                TitleColor="MediumPurple"
+                                FontFamily="SegoePlain"
+                                x:Name="SelectCategory"
+                                SelectedItem="{Binding ActivityCategory}">
+                            
+                        </Picker>
+                    </Frame>
+                    <ImageButton Source="add.png" WidthRequest="40" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"
+                                 Clicked="ImageButton_Clicked"/>
+                </StackLayout>
+                
                 <Frame Padding="0" CornerRadius="30" Opacity="0.6">
                     <Picker HorizontalTextAlignment="Center"
                     Title="Participant Amount"

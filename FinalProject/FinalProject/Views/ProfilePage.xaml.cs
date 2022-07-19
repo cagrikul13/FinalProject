@@ -1,5 +1,7 @@
 ﻿using FinalProject.Models;
 using FinalProject.ViewModel;
+using Firebase.Auth;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,8 @@ namespace FinalProject.Views
         FirebaseHelper firebase = new FirebaseHelper();
         HomePageViewModel profilePageVM;
         List<Activities> profilePageList;
+        public static string webAPIkey = "AIzaSyDBOxgOxBZKB9jKezcVez5ho-nG1aIYmX8";
+        FirebaseAuthProvider firebaseAuthProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));
 
         public ProfilePage()
         {
@@ -30,14 +34,35 @@ namespace FinalProject.Views
             base.OnAppearing();
             profilePageList = await firebase.GetActivities();
             ppActivityList.BindingContext = profilePageList;
+            username.Text = await GetCurrentUserName();
 
         }
 
-        private void LogoutClicked(object sender, EventArgs e)
+        private async void LogoutClicked(object sender, EventArgs e)
         {
-            Preferences.Remove("MyFirebaseRefreshToken");
-            App.Current.MainPage.Navigation.PushAsync(new LoginPage()); 
+            Preferences.Remove("myToken");
+            await App.Current.MainPage.Navigation.PopAsync();
         }
+        private async Task<string> GetCurrentUserName()
+        {
+            try
+            {
+                var savedAuth = JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get("myToken", ""));
+                var refreshedContent = await firebaseAuthProvider.RefreshAuthAsync(savedAuth);
+                Preferences.Set("myToken", JsonConvert.SerializeObject(refreshedContent));
+
+                return savedAuth.User.DisplayName;
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+
+            }
+        }
+        
     }
 
 

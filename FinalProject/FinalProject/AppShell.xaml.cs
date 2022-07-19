@@ -19,6 +19,7 @@ namespace FinalProject
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
             Routing.RegisterRoute(nameof(ForgotPasswordPage), typeof(ForgotPasswordPage));
             Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
+            Routing.RegisterRoute(nameof(ChatRoom), typeof(ChatRoom));
             shellItems.CurrentItem = shellHomePage;
         }
         private async void OnMenuItemClicked(object sender, EventArgs e)

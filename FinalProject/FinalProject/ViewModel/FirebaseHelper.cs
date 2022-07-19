@@ -21,6 +21,7 @@ namespace FinalProject.ViewModel
         public static FirebaseClient firebase = new FirebaseClient("https://actio-5ec97-default-rtdb.firebaseio.com/");
 
         public static string webAPIkey = "AIzaSyDBOxgOxBZKB9jKezcVez5ho-nG1aIYmX8";
+        static FirebaseAuthProvider authProvider;
 
         //User Operations
         public static async Task<List<Users>> GetAllUsers()
@@ -47,26 +48,42 @@ namespace FinalProject.ViewModel
         
         public static async void GetUser(string username,string password)
         {
-            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));      
-            
+            authProvider = new FirebaseAuthProvider(new FirebaseConfig(webAPIkey));      
             
             try
             {
                 var auth = await authProvider.SignInWithEmailAndPasswordAsync(username, password);
                 var content = await auth.GetFreshAuthAsync();
                 var serializedContent = JsonConvert.SerializeObject(content);
-                Preferences.Set("MyFirebaseRefreshToken", serializedContent);
+                Preferences.Set("myToken", serializedContent);
+                
                 /*var allUsers = await GetAllUsers();
                 await firebase
                     .Child("Users")
                     .OnceAsync<Users>();
-                return allUsers.Where(a => a.username == username).FirstOrDefault();*/
+                return allUsers.Where(a => a.email == username).FirstOrDefault();*/
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Error:{e}");
                 
             }
+        }
+        public static async Task<Users> GetUserInfo(string userID)
+        {
+            try
+            {
+                var allUsers = await GetAllUsers();
+                await firebase
+                    .Child("Users")
+                    .OnceAsync<Users>();
+                return allUsers.Where(a => a.userID == userID).FirstOrDefault();
+            }catch(Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return null;
+            }
+            
         }
         public static async Task<bool> AddUser(string Email, string Password,string username, string Name,string DateOfBirth, string PhoneNumber)
         {
@@ -76,11 +93,7 @@ namespace FinalProject.ViewModel
                 var user = await auth.CreateUserWithEmailAndPasswordAsync(Email, Password, username);
                 string gettoken = user.FirebaseToken;
                 FirebaseAuth firebaseAuth = new FirebaseAuth();
-
-                
-
-
-                await firebase.Child("Users").PutAsync(new Users()
+                await firebase.Child("Users").PostAsync(new Users()
                 {
                     email = user.User.Email,
                     password = Password,
@@ -111,6 +124,26 @@ namespace FinalProject.ViewModel
                     .Child("Users")
                     .Child(toUpdateUser.Key)
                     .PutAsync(new Users() { username = Username, password = Password });
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Error:{e}");
+                return false;
+            }
+        }
+        public static async Task<bool> UpdateUserRating(string userID, int rating)
+        {
+            try
+            {
+                var toUpdateUserRating = (await firebase
+                    .Child("Users")
+                    .OnceAsync<Users>())
+                    .Where(a => a.Object.userID == userID).FirstOrDefault();
+                await firebase
+                    .Child("Users")
+                    .Child(toUpdateUserRating.Key)
+                    .PostAsync(new Users() { rating = rating});
                 return true;
             }
             catch (Exception e)
@@ -210,6 +243,7 @@ namespace FinalProject.ViewModel
                .Select((item) =>
                new Activities
                {
+                   //activityURL = "https://image.shutterstock.com/image-photo/athletic-african-american-basketball-player-600w-341365352.jpg",
                    activityCategory = item.Object.activityCategory,
                    activityDate = item.Object.activityDate,
                    activityTime = item.Object.activityTime,

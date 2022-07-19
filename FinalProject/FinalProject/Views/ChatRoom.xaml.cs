@@ -44,6 +44,7 @@ namespace FinalProject.Views
         private async void myListView_Refreshing(object sender, EventArgs e)
         {
             myListView.BindingContext = await firebase.getRoomList();
+            myListView.IsRefreshing = false;
         }
 
         private async void roomAddBtnClicked(object sender, EventArgs e)

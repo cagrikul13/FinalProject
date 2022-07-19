@@ -12,6 +12,8 @@ namespace FinalProject.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public List<string> categoryList;
+
         private string activityCategory;
 
         public string ActivityCategory
@@ -78,6 +80,9 @@ namespace FinalProject.ViewModel
             }else
                 await App.Current.MainPage.DisplayAlert("Activity creation failed", "", "OK");
         }
+
+
+        
     }
     
 }

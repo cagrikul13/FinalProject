@@ -53,6 +53,12 @@
                       Route="TestPage"
                       ContentTemplate="{DataTemplate local:ChatRoom}">
         </ShellContent>
+        <ShellContent Title="Chat"
+                      Icon="chat.png"
+                      IsVisible="False"
+                      Route="TestPage"
+                      ContentTemplate="{DataTemplate local:ChatPage}">
+        </ShellContent>
     </TabBar>
 
 </Shell>

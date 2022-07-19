@@ -31,23 +31,40 @@ namespace FinalProject.Views
             BindingContext = homePageVM;
 
         }
-
-        
-
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             activityList = await firebase.GetActivities();
             myActivityList.BindingContext = activityList;
-            
-            
-            
         }
-
-        
+                
         async private void Settings_Clicked(object sender, EventArgs e)
         {
-                await Navigation.PushModalAsync(new SettingsPage());
+            await Navigation.PushAsync(new SettingsPage());
+        }
+
+        private async void CarouselViewClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var ans = await DisplayAlert("Activity Request", "Are you sure you want to send a request ?", "Yes", "No");
+                if (ans == true)
+                {
+                    await Shell.Current.GoToAsync("ChatRoom");
+                    string rName = await DisplayPromptAsync("Create New Room", "Enter room name");
+                    await firebase.saveRoom(new Room()
+                    {
+                        roomName = rName
+                    });
+                }
+            }catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            
+            
+            
+            
         }
     }
 }

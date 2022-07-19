@@ -22,5 +22,16 @@ namespace FinalProject.Views
             InitializeComponent();
             BindingContext = loginViewModel;
         }
+
+        private void passwordImageClicked(object sender, EventArgs e)
+        {
+            if(loginPasswordEntry.IsPassword == true)
+            {
+                loginPasswordEntry.IsPassword = false;
+            }else
+            {
+                loginPasswordEntry.IsPassword = true;
+            }
+        }
     }
 }

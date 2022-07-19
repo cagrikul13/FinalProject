@@ -6,7 +6,7 @@ namespace FinalProject.Models
 {
     public class Activities
     {
-
+        public string activityURL { get; set; }
         public string activityParticipiantCount { get; set; }
         public string activityTime { get; set; }
         public string activityDate { get; set; }

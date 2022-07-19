@@ -16,10 +16,6 @@
         </Grid.RowDefinitions>
         <StackLayout Spacing="20" Padding="20" Grid.Row="0">
             <StackLayout>
-                <Label x:Name="usernameFromFirebase"
-                       FontSize="50"
-                       FontFamily="SegoePlain"
-                       TextColor="black"/>
                 <!-- Searchbar and label layout -->
                 <Frame Padding="0" CornerRadius="20">
                     <SearchBar Placeholder="Search for an activity"
@@ -92,13 +88,14 @@
             <StackLayout>
                 <!--Activity swiping controls -->
                 <CarouselView ItemsSource="{Binding .}"
-                              x:Name="myActivityList">
+                              x:Name="myActivityList"
+                              Loop="False">
                     <CarouselView.ItemsLayout>
                         <LinearItemsLayout
-                        Orientation="Horizontal"
-                        ItemSpacing="50"
-                        SnapPointsAlignment="Center"
-                        SnapPointsType="MandatorySingle"/>
+                            Orientation="Horizontal"
+                            ItemSpacing="50"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="MandatorySingle"/>
                     </CarouselView.ItemsLayout>
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
@@ -107,21 +104,30 @@
                                        Padding="0"
                                        CornerRadius="20"
                                        BorderColor="#FFAF87">
+                                    
                                     <AbsoluteLayout HorizontalOptions="FillAndExpand"
                                                     VerticalOptions="FillAndExpand">
-                                        <!--<Image Source="{Binding activityPicture}"
+                                        <Image Source="logo3.png"
                                                AbsoluteLayout.LayoutBounds="1,1,1,1"
                                                AbsoluteLayout.LayoutFlags="All"
-                                               Aspect="AspectFit"/>-->
+                                               VerticalOptions="Start"
+                                               WidthRequest="250">
+                                        </Image>
                                         <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1"
                                                      AbsoluteLayout.LayoutFlags="All"
                                                      BackgroundColor="Transparent"
                                                      Padding="15">
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="CarouselViewClicked"
+                                                                      NumberOfTapsRequired="1">
+                                                    
+                                                </TapGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
                                             <Frame CornerRadius="20"
-                                               Opacity="0.6"
-                                               Margin="0,50,0,0"
+                                               Opacity="0.9"
+                                               VerticalOptions="EndAndExpand"
                                                HasShadow="True"
-                                               BackgroundColor="Black">
+                                               BackgroundColor="#4e80b4">
                                                 <StackLayout Spacing="10">
                                                     <Label Text="{Binding activityDate}"
                                                        FontFamily="SegoePlain"
@@ -132,9 +138,10 @@
                                                            TextColor="#FFAF87"
                                                            FontSize="20"/>
                                                     <Label Text="{Binding activityCategory}"
-                                                       FontFamily="SegoePlain"
-                                                       TextColor="#FFAF87"
-                                                       FontSize="20"/>
+                                                           FontFamily="SegoePlain"
+                                                           TextColor="#FFAF87"
+                                                           FontSize="20"
+                                                           x:Name="categoryLbl"/>
                                                     <StackLayout Orientation="Horizontal">
                                                         <Label Text="Maximum participiant number:"
                                                                TextColor="#FFAF87"

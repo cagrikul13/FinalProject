@@ -18,6 +18,6 @@ namespace FinalProject.Models
 
         public String DOB;
 
-        public float rating;
+        public int rating;
     }
 }

@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Firebase.Database;
 using Firebase.Database.Query;
-
+using Xamarin.Essentials;
 
 namespace FinalProject
 {
@@ -27,10 +27,12 @@ namespace FinalProject
 
         protected override void OnSleep()
         {
+            Preferences.Remove("token");
         }
 
         protected override void OnResume()
         {
         }
+        
     }
 }
