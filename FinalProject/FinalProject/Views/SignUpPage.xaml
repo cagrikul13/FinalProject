@@ -6,7 +6,11 @@
              NavigationPage.HasNavigationBar="false">
              
     <ContentPage.Content>
+
         <StackLayout Padding="30" Spacing="10" VerticalOptions="Center">
+
+        <StackLayout Padding="30" Spacing="15">
+
             <Image Source="actioTitle.png" WidthRequest="150">
                 
             </Image>
